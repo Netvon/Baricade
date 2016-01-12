@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Baricade.Core.Board" Collapsed="true">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAAAAAAAEAAAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Board.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Baricade.Core.Fields.ContainerField">
+    <Position X="0.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABACAAQAAAAAIAAAAAAAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Fields\ContainerField.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Baricade.Core.Fields.Field">
+    <Position X="2.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABACAAUgAAAAAAAAAQABAAAAEAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Fields\Field.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Baricade.Core.Util.FieldLocationExtension" Collapsed="true">
+    <Position X="4.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Util\FieldLocationExtension.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Baricade.Core.Movables.Movable" Collapsed="true">
+    <Position X="3" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Movables\Movable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Baricade.Core.Util.OppositeAttribute" Collapsed="true">
+    <Position X="4.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Util\OppositeAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="Baricade.Core.Fields.Direction" Collapsed="true">
+    <Position X="3" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAACACAAAAAAAI=</HashCode>
+      <FileName>Fields\Direction.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
