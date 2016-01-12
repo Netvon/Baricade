@@ -28,9 +28,12 @@ namespace Baricade.Core.Fields
         public virtual bool CanContainMovable => false;
         public virtual bool CanContainBaricade => false;
         public virtual bool CanContainMutlipleMovable => false;
+        public virtual bool CanBeMovedTo => false;
         public virtual bool IsEmpty => true;        
 
         public static Field DefaultField => new ContainerField();
+
+        
 
         public Field AddField(Field field, Direction location)
         {
@@ -82,5 +85,10 @@ namespace Baricade.Core.Fields
         }
 
         public abstract void AcceptMovable(Movable movable);
+
+        public virtual IEnumerable<Movable> GetContainingMovable()
+        {
+            return null;
+        }
     }
 }

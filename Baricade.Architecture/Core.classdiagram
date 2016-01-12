@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="a2435600-bd42-4178-a6f2-62ae0821f77d" name="Core" linkedPackageId="47da56ca-7a92-4e0d-b255-2c1d2d424566" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="a2435600-bd42-4178-a6f2-62ae0821f77d" name="Core" linkedPackageId="47da56ca-7a92-4e0d-b255-2c1d2d424566" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <packagedElements>
     <logicalClassDesignerModelHasTypes>
       <class Id="71c07fc6-379b-41e7-bc0a-e269f144261f" name="Field" isAbstract="true" isLeaf="false" isActiveClass="false">
@@ -30,6 +30,42 @@
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
             <elementDefinition Id="ebc4a9e1-2534-4b0c-a2a4-67565741925f" />
+          </association>
+          <association Id="058b1d50-4f5b-4a07-847c-e231cefa03de" isDerived="false" sourceEndRoleName="Field" targetEndRoleName="Field" isLeaf="false" isAbstract="false">
+            <classMoniker Id="71c07fc6-379b-41e7-bc0a-e269f144261f" LastKnownName="Field" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="8d97f6af-a062-4cbc-ae28-6eca7c2cde9c" name="Field" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString Id="79b39043-0b17-48c5-958f-6a26e0c52279" name="Lower" value="4">
+                      <elementDefinition Id="e7ad2d69-1d17-4cff-8504-e41dcd454182" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="b3e3cc38-7480-449a-a524-157ea25eea85" name="Upper" value="4">
+                      <elementDefinition Id="8db5672b-0427-4430-8c49-1b944819c405" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="5d77eeb5-2b31-423e-97a5-bb9202783a74" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7de50294-35b6-4c37-ac95-76b8a5e6a47c" name="Field" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="704b5266-8083-49ec-9ab0-f8e2fb246f3a" name="Lower" value="4">
+                      <elementDefinition Id="1a41965a-a6ac-4c01-8c7e-9c2cf8c72f78" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="a8f4d05b-f957-4338-834c-20fc16f8cd1b" name="Upper" value="4">
+                      <elementDefinition Id="1aa2f04a-5b58-463d-9947-bceeb3430b20" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="c8599dec-daee-4afc-9d31-7bd738974149" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="9d9d5302-25bc-4d83-a999-e9b4da6d4908" />
           </association>
         </targetEnds>
       </class>
@@ -79,7 +115,7 @@
                     </literalString>
                   </lowerValueInternal>
                   <upperValueInternal>
-                    <literalString Id="4445e88c-25ea-4d89-9ff4-e34e8f562b08" name="Upper" value="*">
+                    <literalString Id="4445e88c-25ea-4d89-9ff4-e34e8f562b08" name="Upper" value="1">
                       <elementDefinition Id="c5e78636-32e2-46e9-ba0a-16cecc5cc971" />
                     </literalString>
                   </upperValueInternal>
@@ -266,6 +302,172 @@
             <elementDefinition Id="efecc0dd-2ba8-4d75-b3d7-4d98c3bf12d1" />
           </association>
         </targetEnds>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="d19095d6-f50c-43e6-932b-8bab7222949e" name="BottomField" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="751e21e3-f77f-46ed-8117-d0d0e7c9384c" />
+        <generalsInternal>
+          <generalization Id="af621f7f-6431-45cd-bf9c-e419882a2542" isSubstitutable="false">
+            <classMoniker Id="038e7340-4e11-45ff-afe7-05cee91181fd" LastKnownName="ContainerField" />
+            <elementDefinition Id="6e850a8a-04ca-4af6-b4a5-6a23481f1df7" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="f1d4f28a-f12e-45a9-a230-8d8beb0ba974" name="Game" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="e290fefc-74f6-420b-9c05-cee520a22d5b" />
+        <targetEnds>
+          <association Id="565df831-5fac-4e7e-8b80-88dc9961fe62" isDerived="false" sourceEndRoleName="Game" targetEndRoleName="Players" isLeaf="false" isAbstract="false">
+            <classMoniker Id="0f8556f0-989c-4871-ae00-a4cbce431467" LastKnownName="Player" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="6dc83ee1-b5d8-4525-94bd-bb225d71cabb" name="Game" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="37137cdc-83fd-467c-b462-b0f1c6783633" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="fdf08637-0ca0-4c0b-84dc-5b744885e2d9" name="Players" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="928e8c23-81e7-4c2b-8c38-43c5b6854a77" name="Lower" value="4">
+                      <elementDefinition Id="1a0853d7-5102-49f9-9747-435c9097f448" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="cac2f394-47b6-44c9-aca4-b2dbc93a2e8d" name="Upper" value="4">
+                      <elementDefinition Id="5eb56986-99ea-4df5-a27c-18ba8c316aeb" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="31d8a7a5-7d76-4573-b08f-93cecc02f570" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="6ac6596e-a349-4669-ba71-5076b86a099e" />
+          </association>
+          <association Id="26b132e7-9b99-46e7-9ff6-5f99745d958f" isDerived="false" sourceEndRoleName="Game" targetEndRoleName="Board" isLeaf="false" isAbstract="false">
+            <classMoniker Id="cf6537e9-c160-40d1-8cf1-16863f4a350f" LastKnownName="Board" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="fc6aff05-4fad-4d3e-a56c-a2d2039b4f4c" name="Game" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="51296c6b-de46-4000-8370-1c2be546b5d3" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="53c9b2ea-0b2e-4957-9d64-e1ce2639f095" name="Board" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="2a782a45-7633-47ca-9a43-a1cfc828df2b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="d8b49f5f-9daf-467b-9b89-04f423d4b0ff" />
+          </association>
+        </targetEnds>
+        <ownedOperationsInternal>
+          <operation Id="1eafcaae-d3a2-4dd3-b403-c73821fae82a" name="GetPlayer" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="850638ea-1480-469b-9378-cbf5e2d004e8" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="01aaf08b-b9c0-44bc-abe1-0ac97361684e" name="id" direction="In" isUnique="false">
+                  <elementDefinition Id="540d2908-5f8b-4bb7-a026-f7da876f7e53" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="f6302860-980a-4701-9a1a-1aad160be81f" LastKnownName="Integer" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="4fef54be-2070-4861-b711-b6cecfc89f2e" direction="Return" isUnique="false">
+                  <elementDefinition Id="f443e112-fd0c-4fbf-a3ff-86842242b82e" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="43d96e6c-d26e-4507-8421-abea1d51c7b0" LastKnownName="Player" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="b0fcfb29-22df-4515-bb78-5e5cbe53c502" name="MovePawn" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="0f21effd-80a7-4cdd-87bc-6454aeb736d2" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="b91ecc22-4eb2-4918-8bcf-a88ce9a46aa7" name="player" direction="In" isUnique="false">
+                  <elementDefinition Id="59076431-b47e-4dc5-87ea-a81443637142" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="43d96e6c-d26e-4507-8421-abea1d51c7b0" LastKnownName="Player" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="60a4e719-9cf9-4b0c-b22d-535bca21234f" name="pawn" direction="In" isUnique="false">
+                  <elementDefinition Id="7c194580-b58e-43f6-87e0-bfd5b211db52" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="a4610604-7a50-4ee5-8436-e8267942c65f" LastKnownName="Movable" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="e6ee7b11-58e8-4150-9559-582ac08c7231" name="moves" direction="In" isUnique="false">
+                  <lowerValueInternal>
+                    <literalString Id="bb6139de-bd02-4bef-8e00-d774f530c895" name="Lower" value="1">
+                      <elementDefinition Id="d232b824-15a0-4c35-b5d6-c097c99d73dd" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="6722738d-d726-4c10-a614-271e00154f96" name="Upper" value="*">
+                      <elementDefinition Id="2d62d4f5-8232-4d49-90af-3c34f4cd3a49" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="f8cf238c-4845-4177-954f-51810a492772" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="7990c8ff-992e-4e74-ab7d-a6d8a0373131" LastKnownName="Direction" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="175f520a-0369-4def-bc17-c17e378e5f36" direction="Return" isUnique="false">
+                  <elementDefinition Id="91135b0a-47db-4c80-96eb-43b45e55da48" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="0ce17550-453f-45fd-af7a-db50fbc08337" LastKnownName="Boolean" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="43d96e6c-d26e-4507-8421-abea1d51c7b0" name="Player" isAbstract="false" isLeaf="false" cachedFullName="Baricade.Architecture::Player">
+        <elementDefinition Id="d0572a58-9d09-4556-80b6-cbb7b051ab3a" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="a4610604-7a50-4ee5-8436-e8267942c65f" name="Movable" isAbstract="false" isLeaf="false" cachedFullName="Baricade.Architecture::Movable">
+        <elementDefinition Id="6b8d0320-a4bc-47b1-b1b7-5ccac5d6a9c7" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="7990c8ff-992e-4e74-ab7d-a6d8a0373131" name="Direction" isAbstract="false" isLeaf="false" cachedFullName="Baricade.Architecture::Direction">
+        <elementDefinition Id="4ab5ea83-e349-4d5b-8c38-0f678c019306" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="f6302860-980a-4701-9a1a-1aad160be81f" name="Integer" isAbstract="false" isLeaf="false" cachedFullName="Integer">
+        <elementDefinition Id="220a3521-e091-4221-bae9-3ef9018e845c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="0ce17550-453f-45fd-af7a-db50fbc08337" name="Boolean" isAbstract="false" isLeaf="false" cachedFullName="Boolean">
+        <elementDefinition Id="8943dc84-709e-4f62-b15a-a3273aa6f165" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="0ef9439f-dd6b-4283-bc50-abbce5b7a32b" name="FinishField" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="82c0ec94-e24a-492b-a43a-666d8e2e10e7" />
+        <generalsInternal>
+          <generalization Id="924a682d-4a00-4521-9fe4-d6839eb34fc7" isSubstitutable="false">
+            <classMoniker Id="038e7340-4e11-45ff-afe7-05cee91181fd" LastKnownName="ContainerField" />
+            <elementDefinition Id="0877b0ab-ea74-4bca-b102-513f128032ba" />
+          </generalization>
+        </generalsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
   </packagedElements>

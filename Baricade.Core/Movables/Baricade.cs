@@ -8,5 +8,9 @@ namespace Baricade.Core.Movables
 {
     class Baricade : Movable
     {
+        public override void EndMove()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
   dslVersion="1.0.0.0"
   Id="a097f283-f7f3-457c-a13b-83a148959591"
   name="Baricade.Architecture" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -74,6 +74,71 @@
                   isDerivedUnion="false"
                   aggregation="None"
                   isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="9d9d5302-25bc-4d83-a999-e9b4da6d4908"
+            isDerived="false"
+            sourceEndRoleName="Field"
+            targetEndRoleName="Field"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="b45bc70d-7ae2-4b36-8634-3d279866fe00"
+              LastKnownName="Field"
+              LastKnownLocation="Baricade.Architecture.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="5d77eeb5-2b31-423e-97a5-bb9202783a74"
+                  name="Field"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="e7ad2d69-1d17-4cff-8504-e41dcd454182"
+                      name="Lower"
+                      value="4" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="8db5672b-0427-4430-8c49-1b944819c405"
+                      name="Upper"
+                      value="4" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="c8599dec-daee-4afc-9d31-7bd738974149"
+                  name="Field"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="1a41965a-a6ac-4c01-8c7e-9c2cf8c72f78"
+                      name="Lower"
+                      value="4" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="1aa2f04a-5b58-463d-9947-bceeb3430b20"
+                      name="Upper"
+                      value="4" />
+                  </upperValueInternal>
+                </memberEnd>
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
@@ -165,7 +230,7 @@
                     <literalString
                       Id="c5e78636-32e2-46e9-ba0a-16cecc5cc971"
                       name="Upper"
-                      value="*" />
+                      value="1" />
                   </upperValueInternal>
                 </memberEnd>
               </associationHasOwnedEnds>
@@ -491,6 +556,665 @@
             </relationshipOwnedElementsInternal>
           </association>
         </targetEnds>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="751e21e3-f77f-46ed-8117-d0d0e7c9384c"
+        name="BottomField"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="6e850a8a-04ca-4af6-b4a5-6a23481f1df7"
+            isSubstitutable="false">
+            <classMoniker
+              Id="3e57a738-12f4-4f69-97af-a8c763748c8a"
+              LastKnownName="ContainerField"
+              LastKnownLocation="Baricade.Architecture.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <interaction
+        Id="26a3ffb2-de6d-40ed-92fe-098f31f290c5"
+        name="Sequence1"
+        collapseFragmentsFlag="false"
+        isActiveClass="false"
+        isAbstract="false"
+        isLeaf="false"
+        isReentrant="false">
+        <fragments>
+          <behaviorExecutionSpecification
+            Id="b354bd18-67c8-4b97-b683-c1ac95718907"
+            name="BehaviorExecutionSpecification5">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="e7f71fc7-9888-4718-a24e-cc1b1d2ca681"
+                LastKnownName="game : Game"
+                LastKnownLocation="Baricade.Architecture.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="8399f71a-55f3-43c7-ad7c-cb4e8ed99c0e"
+                LastKnownName="ExecutionOccurrenceSpecification10"
+                LastKnownLocation="Baricade.Architecture.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="ed466f91-9f69-4e13-ba8a-0c7ec92ac566"
+                LastKnownName="ExecutionOccurrenceSpecification9"
+                LastKnownLocation="Baricade.Architecture.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="98de506f-8545-4e9d-8099-f9eb088dc53d"
+                LastKnownName="MessageOccurrenceSpecification12"
+                LastKnownLocation="Baricade.Architecture.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="015fc5a2-d427-4da1-ae03-4d19a1c23f12"
+                LastKnownName="MessageOccurrenceSpecification13"
+                LastKnownLocation="Baricade.Architecture.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="a835ec34-1a1d-4428-a441-7341a6c5a2ba"
+                LastKnownName="MessageOccurrenceSpecification16"
+                LastKnownLocation="Baricade.Architecture.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="ed466f91-9f69-4e13-ba8a-0c7ec92ac566"
+            name="ExecutionOccurrenceSpecification9">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="e9ff437b-52df-4f82-ba7b-58b5ef6d14c5"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Baricade.Architecture.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="e7f71fc7-9888-4718-a24e-cc1b1d2ca681"
+                LastKnownName="game : Game"
+                LastKnownLocation="Baricade.Architecture.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <lostFoundTarget
+            Id="0e308429-1599-459e-b0e2-1a559134c9f4"
+            name="LostFoundTarget2" />
+          <messageOccurrenceSpecification
+            Id="98de506f-8545-4e9d-8099-f9eb088dc53d"
+            name="MessageOccurrenceSpecification12">
+            <event>
+              <receiveOperationEventMoniker
+                Id="dcda8af1-539a-45b0-bf63-a92300403404"
+                LastKnownLocation="Baricade.Architecture.uml" />
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="e7f71fc7-9888-4718-a24e-cc1b1d2ca681"
+                LastKnownName="game : Game"
+                LastKnownLocation="Baricade.Architecture.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="31d94960-deb7-41e0-94c1-ee8c3de7d6f3"
+            name="BehaviorExecutionSpecification6">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="157b877b-6fcb-42bd-a9cc-27b623e1d397"
+                LastKnownName="pawn : Pawn"
+                LastKnownLocation="Baricade.Architecture.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="dd96bede-2932-444a-b74b-78e167e03cb5"
+                LastKnownName="ExecutionOccurrenceSpecification12"
+                LastKnownLocation="Baricade.Architecture.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="66103c3c-4d68-4e43-86d6-07868bc3a422"
+                LastKnownName="ExecutionOccurrenceSpecification11"
+                LastKnownLocation="Baricade.Architecture.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="184688f5-95a5-4851-b5d6-23cdd2e429ac"
+                LastKnownName="MessageOccurrenceSpecification14"
+                LastKnownLocation="Baricade.Architecture.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="0812d72d-510e-4fc4-9e67-e57e93710f84"
+                LastKnownName="MessageOccurrenceSpecification15"
+                LastKnownLocation="Baricade.Architecture.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="66103c3c-4d68-4e43-86d6-07868bc3a422"
+            name="ExecutionOccurrenceSpecification11">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="611f7d97-7bea-44d8-b2f1-1c5375480d8e"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Baricade.Architecture.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="157b877b-6fcb-42bd-a9cc-27b623e1d397"
+                LastKnownName="pawn : Pawn"
+                LastKnownLocation="Baricade.Architecture.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="015fc5a2-d427-4da1-ae03-4d19a1c23f12"
+            name="MessageOccurrenceSpecification13">
+            <covered>
+              <lifelineMoniker
+                Id="e7f71fc7-9888-4718-a24e-cc1b1d2ca681"
+                LastKnownName="game : Game"
+                LastKnownLocation="Baricade.Architecture.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="184688f5-95a5-4851-b5d6-23cdd2e429ac"
+            name="MessageOccurrenceSpecification14">
+            <covered>
+              <lifelineMoniker
+                Id="157b877b-6fcb-42bd-a9cc-27b623e1d397"
+                LastKnownName="pawn : Pawn"
+                LastKnownLocation="Baricade.Architecture.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="0812d72d-510e-4fc4-9e67-e57e93710f84"
+            name="MessageOccurrenceSpecification15">
+            <covered>
+              <lifelineMoniker
+                Id="157b877b-6fcb-42bd-a9cc-27b623e1d397"
+                LastKnownName="pawn : Pawn"
+                LastKnownLocation="Baricade.Architecture.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="a835ec34-1a1d-4428-a441-7341a6c5a2ba"
+            name="MessageOccurrenceSpecification16">
+            <covered>
+              <lifelineMoniker
+                Id="e7f71fc7-9888-4718-a24e-cc1b1d2ca681"
+                LastKnownName="game : Game"
+                LastKnownLocation="Baricade.Architecture.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="dd96bede-2932-444a-b74b-78e167e03cb5"
+            name="ExecutionOccurrenceSpecification12">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="1c2b79b4-03ed-42ad-96ed-47b93ee39920"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Baricade.Architecture.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="157b877b-6fcb-42bd-a9cc-27b623e1d397"
+                LastKnownName="pawn : Pawn"
+                LastKnownLocation="Baricade.Architecture.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="8399f71a-55f3-43c7-ad7c-cb4e8ed99c0e"
+            name="ExecutionOccurrenceSpecification10">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="ae53c843-073b-45db-b754-047ad55a463b"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Baricade.Architecture.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="e7f71fc7-9888-4718-a24e-cc1b1d2ca681"
+                LastKnownName="game : Game"
+                LastKnownLocation="Baricade.Architecture.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+        </fragments>
+        <lifelines>
+          <lifeline
+            Id="e7f71fc7-9888-4718-a24e-cc1b1d2ca681"
+            name="game : Game"
+            isActor="false"
+            lifelineDisplayName="game : Game">
+            <represents>
+              <propertyMoniker
+                Id="99f13249-b16e-4dcc-a8ba-1bf700fe4919"
+                LastKnownLocation="Baricade.Architecture.uml" />
+            </represents>
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker
+                Id="ed466f91-9f69-4e13-ba8a-0c7ec92ac566"
+                LastKnownName="ExecutionOccurrenceSpecification9"
+                LastKnownLocation="Baricade.Architecture.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="8399f71a-55f3-43c7-ad7c-cb4e8ed99c0e"
+                LastKnownName="ExecutionOccurrenceSpecification10"
+                LastKnownLocation="Baricade.Architecture.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline
+            Id="157b877b-6fcb-42bd-a9cc-27b623e1d397"
+            name="pawn : Pawn"
+            isActor="false"
+            lifelineDisplayName="pawn : Pawn">
+            <represents>
+              <propertyMoniker
+                Id="eb9f921e-b120-4d16-b80d-74abeaf0a0c8"
+                LastKnownLocation="Baricade.Architecture.uml" />
+            </represents>
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker
+                Id="66103c3c-4d68-4e43-86d6-07868bc3a422"
+                LastKnownName="ExecutionOccurrenceSpecification11"
+                LastKnownLocation="Baricade.Architecture.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="dd96bede-2932-444a-b74b-78e167e03cb5"
+                LastKnownName="ExecutionOccurrenceSpecification12"
+                LastKnownLocation="Baricade.Architecture.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+        </lifelines>
+        <messages>
+          <message
+            Id="2174c444-481e-46b9-b419-2a735ef1f329"
+            name="MovePawn"
+            messageKind="Found"
+            messageSort="AsynchCall"
+            createSelfMessage="false"
+            signatureText="+ MovePawn(player : Player, pawn : Movable, moves : Direction[1..*]) : Boolean">
+            <sendEvent>
+              <lostFoundTargetMoniker
+                Id="0e308429-1599-459e-b0e2-1a559134c9f4"
+                LastKnownName="LostFoundTarget2"
+                LastKnownLocation="Baricade.Architecture.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="98de506f-8545-4e9d-8099-f9eb088dc53d"
+                LastKnownName="MessageOccurrenceSpecification12"
+                LastKnownLocation="Baricade.Architecture.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="e8bb4a4c-7b90-4c60-aba6-ba6df0f4c22d"
+            name="Move"
+            messageKind="Complete"
+            messageSort="SynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="015fc5a2-d427-4da1-ae03-4d19a1c23f12"
+                LastKnownName="MessageOccurrenceSpecification13"
+                LastKnownLocation="Baricade.Architecture.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="184688f5-95a5-4851-b5d6-23cdd2e429ac"
+                LastKnownName="MessageOccurrenceSpecification14"
+                LastKnownLocation="Baricade.Architecture.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="e4b497ae-bdad-45a1-9a9a-37a04085f611"
+            name="&lt;&lt;return&gt;&gt;"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="0812d72d-510e-4fc4-9e67-e57e93710f84"
+                LastKnownName="MessageOccurrenceSpecification15"
+                LastKnownLocation="Baricade.Architecture.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="a835ec34-1a1d-4428-a441-7341a6c5a2ba"
+                LastKnownName="MessageOccurrenceSpecification16"
+                LastKnownLocation="Baricade.Architecture.uml" />
+            </receiveEvent>
+          </message>
+        </messages>
+        <ownedAttributesInternal>
+          <property
+            Id="b0ffee43-b68a-4c0f-bc52-3f3323646c76"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="d0572a58-9d09-4556-80b6-cbb7b051ab3a"
+                LastKnownName="Player"
+                LastKnownLocation="Baricade.Architecture.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="eb9f921e-b120-4d16-b80d-74abeaf0a0c8"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="c3a588a9-1b0d-4e9d-b94b-1e6ffd2962b3"
+                LastKnownName="Pawn"
+                LastKnownLocation="Baricade.Architecture.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="99f13249-b16e-4dcc-a8ba-1bf700fe4919"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="e290fefc-74f6-420b-9c05-cee520a22d5b"
+                LastKnownName="Game"
+                LastKnownLocation="Baricade.Architecture.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </interaction>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="e290fefc-74f6-420b-9c05-cee520a22d5b"
+        name="Game"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="6ac6596e-a349-4669-ba71-5076b86a099e"
+            isDerived="false"
+            sourceEndRoleName="Game"
+            targetEndRoleName="Players"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="d0572a58-9d09-4556-80b6-cbb7b051ab3a"
+              LastKnownName="Player"
+              LastKnownLocation="Baricade.Architecture.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="37137cdc-83fd-467c-b462-b0f1c6783633"
+                  name="Game"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="31d8a7a5-7d76-4573-b08f-93cecc02f570"
+                  name="Players"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="1a0853d7-5102-49f9-9747-435c9097f448"
+                      name="Lower"
+                      value="4" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="5eb56986-99ea-4df5-a27c-18ba8c316aeb"
+                      name="Upper"
+                      value="4" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="d8b49f5f-9daf-467b-9b89-04f423d4b0ff"
+            isDerived="false"
+            sourceEndRoleName="Game"
+            targetEndRoleName="Board"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="fbcb5502-3809-432e-99f0-26c3e9253a22"
+              LastKnownName="Board"
+              LastKnownLocation="Baricade.Architecture.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="51296c6b-de46-4000-8370-1c2be546b5d3"
+                  name="Game"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="2a782a45-7633-47ca-9a43-a1cfc828df2b"
+                  name="Board"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedOperationsInternal>
+          <operation
+            Id="850638ea-1480-469b-9378-cbf5e2d004e8"
+            name="GetPlayer"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="540d2908-5f8b-4bb7-a026-f7da876f7e53"
+                  name="id"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="Baricade.Architecture.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f443e112-fd0c-4fbf-a3ff-86842242b82e"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="d0572a58-9d09-4556-80b6-cbb7b051ab3a"
+                      LastKnownName="Player"
+                      LastKnownLocation="Baricade.Architecture.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="0f21effd-80a7-4cdd-87bc-6454aeb736d2"
+            name="MovePawn"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="59076431-b47e-4dc5-87ea-a81443637142"
+                  name="player"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="d0572a58-9d09-4556-80b6-cbb7b051ab3a"
+                      LastKnownName="Player"
+                      LastKnownLocation="Baricade.Architecture.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="7c194580-b58e-43f6-87e0-bfd5b211db52"
+                  name="pawn"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="6b8d0320-a4bc-47b1-b1b7-5ccac5d6a9c7"
+                      LastKnownName="Movable"
+                      LastKnownLocation="Baricade.Architecture.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f8cf238c-4845-4177-954f-51810a492772"
+                  name="moves"
+                  direction="In"
+                  isUnique="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="d232b824-15a0-4c35-b5d6-c097c99d73dd"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="2d62d4f5-8232-4d49-90af-3c34f4cd3a49"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                  <type_NamedElement>
+                    <enumerationMoniker
+                      Id="4ab5ea83-e349-4d5b-8c38-0f678c019306"
+                      LastKnownName="Direction"
+                      LastKnownLocation="Baricade.Architecture.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="91135b0a-47db-4c80-96eb-43b45e55da48"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="Baricade.Architecture.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="d25101c2-71db-4f50-9bfd-ce44ef91bc18"
+        name="bool" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="e9ff437b-52df-4f82-ba7b-58b5ef6d14c5"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="ae53c843-073b-45db-b754-047ad55a463b"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <receiveOperationEvent
+        Id="dcda8af1-539a-45b0-bf63-a92300403404">
+        <operation>
+          <operationMoniker
+            Id="0f21effd-80a7-4cdd-87bc-6454aeb736d2"
+            LastKnownName="MovePawn"
+            LastKnownLocation="Baricade.Architecture.uml" />
+        </operation>
+      </receiveOperationEvent>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="611f7d97-7bea-44d8-b2f1-1c5375480d8e"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="1c2b79b4-03ed-42ad-96ed-47b93ee39920"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="82c0ec94-e24a-492b-a43a-666d8e2e10e7"
+        name="FinishField"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="0877b0ab-ea74-4bca-b102-513f128032ba"
+            isSubstitutable="false">
+            <classMoniker
+              Id="3e57a738-12f4-4f69-97af-a8c763748c8a"
+              LastKnownName="ContainerField"
+              LastKnownLocation="Baricade.Architecture.uml" />
+          </generalization>
+        </generalsInternal>
       </class>
     </packageHasNamedElement>
   </packagedElements>

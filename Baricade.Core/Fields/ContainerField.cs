@@ -14,11 +14,17 @@ namespace Baricade.Core.Fields
         public override bool CanContainMovable => true;
         public override bool CanContainMutlipleMovable => false;
         public override bool CanContainBaricade => true;
+        public override bool CanBeMovedTo => true;
         public override bool IsEmpty => Child == null;
 
         public override void AcceptMovable(Movable movable)
         {
             throw new NotImplementedException();
+        }
+
+        public override IEnumerable<Movable> GetContainingMovable()
+        {
+            return new[] { Child };
         }
     }
 }

@@ -8,5 +8,6 @@ namespace Baricade.Core.Fields
 {
     class ForestField : CollectionField
     {
+        public override bool CanBeMovedTo => false;
     }
 }
