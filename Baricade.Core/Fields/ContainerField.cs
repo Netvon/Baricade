@@ -64,7 +64,7 @@ namespace Baricade.Core.Fields
             return true;
         }
 
-        void ClearPrevious(Movable movable)
+        public void ClearPrevious(Movable movable)
         {
             var cf = movable.StandingOn as ContainerField;
             if (cf != null)

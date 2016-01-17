@@ -120,9 +120,9 @@ namespace Baricade.Core
             return fifth;
         }
 
-        Field CreateFourthRow(Field second)
+        Field CreateFourthRow(Field third)
         {
-            var middle = second.GetField(Direction.Right, 3)
+            var middle = third.GetField(Direction.Right, 3)
                   .AddField(Direction.Up)
                   .GetField(Direction.Up);
 
@@ -141,7 +141,11 @@ namespace Baricade.Core
             var cf2 = middle.GetField(Direction.Left, 2) as ContainerField;
             cf2.Child = new Movables.Baricade();
 
-            return middle.GetField(Direction.Left, 3);
+            third.GetField(Direction.Right, 2)
+                 .AddField(Direction.Up, middle);
+
+            var forth = middle.GetField(Direction.Left, 3);
+            return forth;
 
         }
 

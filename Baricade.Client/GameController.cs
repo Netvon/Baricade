@@ -53,6 +53,15 @@ namespace Baricade.Client
                     
 
                     string directionString = gameview.GetDirection();
+
+                    if(directionString == "reset")
+                    {
+                        i = 0;
+                        game.CurrentPawn.ResetMove();
+                        RefreshBoard();
+                        break;
+                    }
+
                     var direction = Enum.Parse(typeof(Direction), directionString, true);
 
                     if (game.TryMove((Direction)direction))
