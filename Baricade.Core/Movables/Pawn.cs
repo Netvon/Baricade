@@ -9,9 +9,10 @@ namespace Baricade.Core.Movables
 {
     public class Pawn : Movable
     {
-        public Pawn(int number)
+        public Pawn(int number, Player owned)
         {
             Number = number;
+            OwnedBy = owned;
         }
 
         public int Number { get; }

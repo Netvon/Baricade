@@ -25,13 +25,19 @@ namespace Baricade.Core.Movables
             IsHit = false;
 
             var nextField = StandingOn.GetField(direction);
+
+            if (nextField == null)
+                return false;
             if (_traversedFields.Contains(nextField))
                 return false;
 
             var @out = nextField.AcceptMovable(this);
 
             if (@out)
+            {
                 AvailableMoves--;
+                _traversedFields.Add(nextField);
+            }              
 
             if (AvailableMoves == 0)
                 EndMove();
@@ -60,6 +66,7 @@ namespace Baricade.Core.Movables
         public void EndMove()
         {
             _traversedFields.Clear();
+            _traversedFields.Add(StandingOn);
         }
 
         public void Hit()
