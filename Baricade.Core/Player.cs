@@ -13,16 +13,23 @@ namespace Baricade.Core
         {
             Game = game;
             Number = number;
+
+            Pawns = new List<Pawn>()
+            {
+                new Pawn(1),
+                new Pawn(2),
+                new Pawn(3),
+                new Pawn(4)
+            };
+
         }
 
         public Player(int number)
             :this(null, number)
-        {
-
-        }
+        { }
 
         public int Number { get; }
-        List<Pawn> Pawns { get; }
+        public List<Pawn> Pawns { get; }
         public Game Game { get; set; }
     }
 }

@@ -12,6 +12,8 @@ namespace Baricade.Core.Fields
         public SpawnField(Player player)
         {
             Player = player;
+
+            Children.AddRange(player.Pawns);
         }
         public Player Player { get; }
 

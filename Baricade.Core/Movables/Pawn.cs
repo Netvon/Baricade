@@ -8,7 +8,13 @@ using System.Threading.Tasks;
 namespace Baricade.Core.Movables
 {
     public class Pawn : Movable
-    {     
+    {
+        public Pawn(int number)
+        {
+            Number = number;
+        }
+
+        public int Number { get; }
 
         public Player OwnedBy { get; set; }
 
