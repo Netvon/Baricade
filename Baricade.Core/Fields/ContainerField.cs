@@ -39,11 +39,15 @@ namespace Baricade.Core.Fields
                 Child.CanHit(movable.Owner) && movable.AvailableMoves == 1)
             {
                 Child.Hit();
-                SendToAfterHit.AcceptMovable(Child);
 
                 if(Child.GetType() == typeof(Movables.Baricade))
                 {
                     Game.GetInstance().SetBaricadeMoveMode(Child);
+                }
+                else
+                {
+                    var sendTo = Game.GetInstance().Board.GetReturnPoint(Child);
+                    sendTo.AcceptMovable(Child);
                 }
 
                 Child = movable;
