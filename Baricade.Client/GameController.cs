@@ -39,7 +39,7 @@ namespace Baricade.Client
             {
                 int pawn = gameview.ShowTurn(game.CurrentPlayer.Number);
                 game.SelectPawnForMove(pawn);
-
+                
                 int number = game.Dice.LastValue;
 
                 RefreshBoard();
@@ -63,6 +63,9 @@ namespace Baricade.Client
                         RefreshBoard();
                         gameview.WrongMove();
                     }
+                    
+                    
+                    game.CurrentPawn.EndMove();
                 }
                 
                 RefreshBoard();
