@@ -27,6 +27,7 @@ namespace Baricade.Core.Fields
 
             if (IsEmpty)
             {
+
                 ClearPrevious(movable);
 
                 Child = movable;
@@ -34,11 +35,7 @@ namespace Baricade.Core.Fields
             else if (!IsEmpty &&
                movable.AvailableMoves > 1)
             {
-                if (Game.GetInstance().Dice.LastValue == movable.AvailableMoves)
-                    ClearPrevious(movable);
-                else
-                    ClearPreviousTempChild(movable);
-
+                ClearPrevious(movable);
                 TempChild = movable;
             }
             else if (!IsEmpty &&
@@ -71,10 +68,11 @@ namespace Baricade.Core.Fields
         {
             var cf = movable.StandingOn as ContainerField;
             if (cf != null)
-            {
-                cf.Child = null;
+            {                
                 if (cf.TempChild == movable)
                     cf.TempChild = null;
+                else
+                    cf.Child = null;
             }
 
             var collf = movable.StandingOn as CollectionField;
