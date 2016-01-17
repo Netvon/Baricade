@@ -50,8 +50,6 @@ namespace Baricade.Client
                     
                     gameview.Move(number - i);
 
-                    
-
                     String directionString = gameview.GetDirection();
                     var direction = Enum.Parse(typeof(Direction), directionString);
 
