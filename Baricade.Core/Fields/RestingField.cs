@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Baricade.Core.Fields
 {
-    class RestingField : ContainerField
+    public class RestingField : ContainerField
     {
         public override bool AcceptMovable(Movable movable)
         {

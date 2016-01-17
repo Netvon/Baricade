@@ -7,7 +7,7 @@ using Baricade.Core.Movables;
 
 namespace Baricade.Core.Fields
 {
-    class SpawnField : CollectionField
+    public class SpawnField : CollectionField
     {   
         public SpawnField(Player player)
         {

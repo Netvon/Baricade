@@ -7,7 +7,7 @@ using Baricade.Core.Movables;
 
 namespace Baricade.Core.Fields
 {
-    class FinishField : ContainerField
+    public class FinishField : ContainerField
     {
         public override bool AcceptMovable(Movable movable)
         {

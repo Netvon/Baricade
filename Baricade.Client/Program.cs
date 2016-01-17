@@ -69,6 +69,7 @@ namespace Baricade.Client
 
             BoardView bv = new BoardView();
             bv.Show(game.Board);
+            Console.ReadLine();
         }
     }
 }

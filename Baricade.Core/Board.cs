@@ -17,6 +17,7 @@ namespace Baricade.Core
         }
 
         public Field Origin { get; private set; }
+        public Field Finish { get; private set; }
         public int Width { get; }
         public int Height { get; }
 
@@ -48,8 +49,8 @@ namespace Baricade.Core
             // Seventh Row
             Field seventh = CreateSeventhRow(sixth);
 
-            seventh.GetField(Direction.Right, 4)
-                   .AddField(Direction.Up, new FinishField());
+            Finish = seventh.GetField(Direction.Right, 4)
+                   .AddField(Direction.Up, new FinishField()).GetField(Direction.Up);
 
             Origin = origin;
         }
