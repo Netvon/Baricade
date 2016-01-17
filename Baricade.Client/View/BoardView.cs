@@ -198,6 +198,16 @@ namespace Baricade.Client.View
 
         private String Show(Field obj)
         {
+            ContainerField item = obj as ContainerField;
+            if(item != null)
+            {
+                if(item.Child is Baricade.Core.Movables.Baricade)
+                {
+                    return "B";
+                }
+            }
+            
+
             if (obj is FinishField)
             {
                 return "*";
@@ -205,7 +215,7 @@ namespace Baricade.Client.View
             else if (obj is SpawnField)
             {
                 var field = (SpawnField)obj;
-                return field.Player.Number + field.Children.Count() + "";
+                return field.Player.Number+"";
             }
             else if (obj is RestingField)
             {

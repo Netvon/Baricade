@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Baricade.Core.Movables
 {
-    class Baricade : Movable
+    public class Baricade : Movable
     {
         public override bool CanHit(Player player)
         {
