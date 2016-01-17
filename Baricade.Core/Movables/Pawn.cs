@@ -12,12 +12,12 @@ namespace Baricade.Core.Movables
         public Pawn(int number, Player owned)
         {
             Number = number;
-            OwnedBy = owned;
+            Owner = owned;
         }
 
         public int Number { get; }
 
-        public Player OwnedBy { get; set; }
+        public Player OwnedBy => Owner;
 
         public override bool CanHit(Player player)
         {

@@ -27,23 +27,18 @@ namespace Baricade.Core.Fields
 
             if (IsEmpty)
             {
-                var cf = movable.StandingOn as ContainerField;
-                if (cf != null)
-                {
-                    cf.Child = null;
-                    if (cf.TempChild == movable)
-                        cf.TempChild = null;
-                }
-
-                var collf = movable.StandingOn as CollectionField;
-                if (collf != null)
-                    collf.Children.Remove(movable);
+                ClearPrevious(movable);
 
                 Child = movable;
             }
             else if (!IsEmpty &&
                movable.AvailableMoves > 1)
             {
+                if (Game.GetInstance().Dice.LastValue == movable.AvailableMoves)
+                    ClearPrevious(movable);
+                else
+                    ClearPreviousTempChild(movable);
+
                 TempChild = movable;
             }
             else if (!IsEmpty &&
@@ -62,12 +57,36 @@ namespace Baricade.Core.Fields
                     sendTo.AcceptMovable(Child);
                 }
 
+                ClearPrevious(movable);
+
                 Child = movable;
             }
 
             movable.Place(this);
 
             return true;
+        }
+
+        void ClearPrevious(Movable movable)
+        {
+            var cf = movable.StandingOn as ContainerField;
+            if (cf != null)
+            {
+                cf.Child = null;
+                if (cf.TempChild == movable)
+                    cf.TempChild = null;
+            }
+
+            var collf = movable.StandingOn as CollectionField;
+            if (collf != null)
+                collf.Children.Remove(movable);
+        }
+
+        void ClearPreviousTempChild(Movable movable)
+        {
+            var cf = movable.StandingOn as ContainerField;
+            if (cf != null && cf.TempChild == movable)
+                cf.TempChild = null;
         }
     }
 }
