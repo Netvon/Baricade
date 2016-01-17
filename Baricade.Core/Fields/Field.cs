@@ -36,28 +36,33 @@ namespace Baricade.Core.Fields
         public static Field DefaultField => new ContainerField();
         public Field SendToAfterHit { get; set; }
 
-        public Field AddField(Field field, Direction location)
+        public Field AddField(Direction location, Field field)
         {
             _fieldDictionary[location] = field;
 
             if (field.GetField(location.Opposite()) == null)
-                field.AddField(this, location.Opposite());
+                field.AddField(location.Opposite(), this);
             
             return this;
         }
 
         public Field AddField(Direction location)
         {
-            return AddField(DefaultField, location);
+            return AddField(location, DefaultField);
         }
 
         public Field AddField(Direction location, int count)
         {
+            return AddField(location, count, typeof(ContainerField));
+        }
+
+        public Field AddField(Direction location, int count, Type fieldType)
+        {
             Field newField = this;
             for (int i = 0; i < count; i++)
-            {
-                var tempNewField = DefaultField;
-                newField.AddField(tempNewField, location);
+            {      
+                Field tempNewField = Activator.CreateInstance(fieldType) as Field;
+                newField.AddField(location, tempNewField);
 
                 newField = tempNewField;
             }
