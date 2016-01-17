@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Baricade.Core.Fields
 {
-    abstract class CollectionField : Field
+    public abstract class CollectionField : Field
     {
         public CollectionField()
         {

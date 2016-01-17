@@ -7,7 +7,7 @@ using Baricade.Core.Movables;
 
 namespace Baricade.Core.Fields
 {
-    class ForestField : CollectionField
+    public class ForestField : CollectionField
     {
         public override bool AcceptMovable(Movable movable)
         {
