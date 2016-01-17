@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Baricade.Core.Movables.Movable" Collapsed="true">
+    <Position X="6.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAACAAIAAAQIAAAIEAAAAAACAAAAAAEEGAAAEAgA=</HashCode>
+      <FileName>Movables\Movable.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="StandingOn" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Baricade.Core.Movables.Pawn" Collapsed="true">
+    <Position X="5.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAAEAAAAAAAAAAAAAAAEAAABAAAAA=</HashCode>
+      <FileName>Movables\Pawn.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="OwnedBy" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Baricade.Core.Movables.Baricade" Collapsed="true">
+    <Position X="7.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Movables\Baricade.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Baricade.Core.Fields.ContainerField" Collapsed="true">
+    <Position X="6.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAIgAAAAAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Fields\ContainerField.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Child" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Baricade.Core.Player" Collapsed="true">
+    <Position X="3.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAEAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Player.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Pawns" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Baricade.Core.Fields.CollectionField" Collapsed="true">
+    <Position X="8.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAAAEAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Fields\CollectionField.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Children" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Baricade.Core.Fields.Field" Collapsed="true">
+    <Position X="6.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAUgAAAAAAAAAQABAAAAkAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Fields\Field.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

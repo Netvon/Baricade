@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Baricade.Client.View
+namespace Baricade.Client.Presentation
 {
     public class BoardView
     {
@@ -122,7 +122,7 @@ namespace Baricade.Client.View
                 Console.Write(Show(field));
             }
 
-            Field forest = field.GetField(Direction.Left); ;
+            Field forest = field.GetField(Direction.Left);
             for (int i = 0; i < 1; i++)
             {
                 forest = forest.GetField(Direction.Left);
@@ -196,39 +196,9 @@ namespace Baricade.Client.View
             Console.Write(" " + Show(field));
         }
 
-        private String Show(Field obj)
+        private string Show(Field obj)
         {
-            ContainerField item = obj as ContainerField;
-            if(item != null)
-            {
-                if(item.Child is Baricade.Core.Movables.Baricade)
-                {
-                    return "B";
-                }
-            }
-            
-
-            if (obj is FinishField)
-            {
-                return "*";
-            }
-            else if (obj is SpawnField)
-            {
-                var field = (SpawnField)obj;
-                return field.Player.Number+"";
-            }
-            else if (obj is RestingField)
-            {
-                return "R";
-            }
-            else if (obj is ForestField)
-            {
-                return "F";
-            }
-            else
-            {
-                return "x";
-            }
+            return FieldToString.Convert(obj);
             
         }
 

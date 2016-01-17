@@ -1,49 +1,148 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Baricade.Core.Board" Collapsed="true">
-    <Position X="3" Y="0.5" Width="1.5" />
+    <Position X="10" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAABAAAAAAAAAAAAEAAAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <HashCode>CAABAAAAJAAAIAACAAAAAEAAAAAAEIAAAgAQgCgQAAk=</HashCode>
       <FileName>Board.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Origin" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="Baricade.Core.Fields.ContainerField">
-    <Position X="0.75" Y="2" Width="1.5" />
+    <Position X="4.25" Y="4.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AABACAAQAAAAAIAAAAAAAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AABAAAAAAAAAAIgAAAAAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Fields\ContainerField.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Baricade.Core.Fields.Field">
-    <Position X="2.5" Y="4.5" Width="1.5" />
+    <Position X="6.5" Y="0.5" Width="1.5" />
+    <AssociationLine Name="_fieldDictionary" Type="Baricade.Core.Fields.Field" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="6.5" Y="1.812" />
+        <Point X="6.125" Y="1.812" />
+        <Point X="6.125" Y="0.125" />
+        <Point X="7.478" Y="0.125" />
+        <Point X="7.478" Y="0.5" />
+      </Path>
+    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AABACAAUgAAAAAAAAAQABAAAAEAQAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AABAAAAUgAAAAAAAAAQABAAAAkAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Fields\Field.cs</FileName>
     </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="_fieldDictionary" />
+    </ShowAsCollectionAssociation>
   </Class>
   <Class Name="Baricade.Core.Util.FieldLocationExtension" Collapsed="true">
-    <Position X="4.75" Y="0.5" Width="1.5" />
+    <Position X="18.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
       <FileName>Util\FieldLocationExtension.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Baricade.Core.Movables.Movable" Collapsed="true">
-    <Position X="3" Y="1.5" Width="1.5" />
+    <Position X="1.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAIAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>EAAAAACAAIAAAQIAAAIEAAAAAACAAAAAAEEGAAAEAgA=</HashCode>
       <FileName>Movables\Movable.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Baricade.Core.Util.OppositeAttribute" Collapsed="true">
-    <Position X="4.75" Y="1.5" Width="1.5" />
+    <Position X="17.25" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
       <FileName>Util\OppositeAttribute.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Enum Name="Baricade.Core.Fields.Direction" Collapsed="true">
-    <Position X="3" Y="2.75" Width="1.5" />
+  <Class Name="Baricade.Core.Dice" Collapsed="true">
+    <Position X="16.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAAAACAAAAAAAAACAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Dice.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Baricade.Core.Game" Collapsed="true">
+    <Position X="14.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAGAAAAAAAAAAAAAEAECgBAhgAAAAIBAAhGkAAgA=</HashCode>
+      <FileName>Game.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Baricade.Core.Player" Collapsed="true">
+    <Position X="18.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAEAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Player.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Baricade.Core.Fields.BottomField" Collapsed="true">
+    <Position X="3.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Fields\BottomField.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Baricade.Core.Fields.CityField" Collapsed="true">
+    <Position X="7.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Fields\CityField.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Baricade.Core.Fields.CollectionField" Collapsed="true">
+    <Position X="11" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAAAEAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Fields\CollectionField.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Baricade.Core.Fields.FinishField" Collapsed="true">
+    <Position X="1" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Fields\FinishField.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Baricade.Core.Fields.ForestField" Collapsed="true">
+    <Position X="10" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Fields\ForestField.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Baricade.Core.Fields.RestingField" Collapsed="true">
+    <Position X="5.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Fields\RestingField.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Baricade.Core.Fields.SpawnField" Collapsed="true">
+    <Position X="12.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Fields\SpawnField.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Baricade.Core.Movables.Baricade" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Movables\Baricade.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Baricade.Core.Movables.Pawn" Collapsed="true">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAAEAAAAAAAAAAAAAAAEAAABAAAAA=</HashCode>
+      <FileName>Movables\Pawn.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="Baricade.Core.Fields.Direction">
+    <Position X="14.75" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAACACAAAAAAAI=</HashCode>
       <FileName>Fields\Direction.cs</FileName>
