@@ -64,8 +64,7 @@ namespace Baricade.Client
             //top.GetField(Direction.Right, 10)
             //   .AddField(second.GetField(Direction.Right, 10), Direction.Down);
 
-            Game game = new Game(new Player(1), new Player(2), new Player(3), new Player(4));
-            
+            Game game = Game.GetInstance();            
 
             BoardView bv = new BoardView();
             bv.Show(game.Board);

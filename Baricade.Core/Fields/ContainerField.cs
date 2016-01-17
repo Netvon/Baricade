@@ -40,6 +40,12 @@ namespace Baricade.Core.Fields
             {
                 Child.Hit();
                 SendToAfterHit.AcceptMovable(Child);
+
+                if(Child.GetType() == typeof(Movables.Baricade))
+                {
+                    Game.GetInstance().SetBaricadeMoveMode(Child);
+                }
+
                 Child = movable;
             }
 
