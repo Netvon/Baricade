@@ -47,8 +47,8 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\BoardView.cs" />
-	<Compile Include="Presentation\FieldToString.cs" />
-	<Compile Include="View\GameView.cs" />
+    <Compile Include="Presentation\FieldToString.cs" />
+    <Compile Include="View\GameView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -128,7 +128,7 @@ namespace Baricade.Client.View
                 Console.Write(Show(field));
             }
 
-            Field forest = field.GetField(Direction.Left); ;
+            Field forest = field.GetField(Direction.Left);
             for (int i = 0; i < 1; i++)
             {
                 forest = forest.GetField(Direction.Left);

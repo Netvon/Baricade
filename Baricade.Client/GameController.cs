@@ -52,8 +52,8 @@ namespace Baricade.Client
 
                     
 
-                    String directionString = gameview.GetDirection();
-                    var direction = Enum.Parse(typeof(Direction), directionString);
+                    string directionString = gameview.GetDirection();
+                    var direction = Enum.Parse(typeof(Direction), directionString, true);
 
                     if (game.TryMove((Direction)direction))
                     {
