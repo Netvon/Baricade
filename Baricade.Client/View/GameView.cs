@@ -31,7 +31,8 @@ namespace Baricade.Client.View
 
         public void Move(int number)
         {
-            Console.WriteLine("Je hebt " + number + " gegooid!");
+            Console.ForegroundColor = ConsoleColor.DarkGray;
+            Console.WriteLine("Je hebt " + number + " zetten over");
             Console.WriteLine("Waar wil je heen?");
         }
 
@@ -70,6 +71,11 @@ namespace Baricade.Client.View
                 default:
                     return false;
             }
+        }
+
+        public void setCurser()
+        {
+            Console.SetCursorPosition(0, 18);
         }
     }
 }

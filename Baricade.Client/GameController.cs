@@ -33,34 +33,42 @@ namespace Baricade.Client
 
         public void PlayGame()
         {
+            game.StartGame();
             boardview.Show(game.Board);
-            int pawn = gameview.ShowTurn(game.CurrentPlayer.Number);
-            game.SelectPawnForMove(pawn);
-
-            int number = game.Dice.Roll();
-
-            gameview.Move(number);
-
-            int i = 0;
-            while(i < number)
+            while (!game.IsWon)
             {
-                String directionString = gameview.GetDirection();
-                var direction = Enum.Parse(typeof(Direction), directionString);
+                int pawn = gameview.ShowTurn(game.CurrentPlayer.Number);
+                game.SelectPawnForMove(pawn);
 
-                if(game.TryMove((Direction)direction))
+                int number = game.Dice.LastValue;
+
+                RefreshBoard();
+
+                int i = 0;
+                while (i < number)
                 {
-                    i++;
-                    ClearBoard();
+                    gameview.setCurser();
+                    gameview.Move(number - i);
+
+                    String directionString = gameview.GetDirection();
+                    var direction = Enum.Parse(typeof(Direction), directionString);
+
+                    if (game.TryMove((Direction)direction))
+                    {
+                        i++;
+                        RefreshBoard();
+                    }
+                    else
+                    {
+                        gameview.WrongMove();
+                    }
                 }
-                else
-                {
-                    gameview.WrongMove();
-                }               
-            }
-            Console.ReadLine();
+                
+                RefreshBoard();
+            }       
         }
 
-        private void ClearBoard()
+        private void RefreshBoard()
         {
             Console.Clear();
             boardview.Show(game.Board);

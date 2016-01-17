@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Baricade.Core.Fields.ContainerField">
+    <Position X="5.25" Y="3.5" Width="1.5" />
+    <Members>
+      <Property Name="Child" Hidden="true" />
+      <Property Name="IsEmpty" Hidden="true" />
+      <Property Name="TempChild" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAIgAAAAAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Fields\ContainerField.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Baricade.Core.Fields.Field">
+    <Position X="6" Y="1.75" Width="2" />
+    <Members>
+      <Field Name="_fieldDictionary" Hidden="true" />
+      <Method Name="AddField" Hidden="true" />
+      <Property Name="DefaultField" Hidden="true" />
+      <Method Name="Field" Hidden="true" />
+      <Method Name="GetField" Hidden="true" />
+      <Method Name="HasFieldInDirection" Hidden="true" />
+      <Property Name="IsEmpty" Hidden="true" />
+      <Property Name="UniqueID" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AABAAAAUgAAAAAAAAAQABAAAAkAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Fields\Field.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Baricade.Core.Fields.CollectionField">
+    <Position X="7.25" Y="3.5" Width="1.5" />
+    <Members>
+      <Property Name="Children" Hidden="true" />
+      <Method Name="CollectionField" Hidden="true" />
+      <Property Name="IsEmpty" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAAAEAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Fields\CollectionField.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Baricade.Core.Fields.BottomField">
+    <Position X="3.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Fields\BottomField.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Baricade.Core.Fields.CityField" Collapsed="true">
+    <Position X="5.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Fields\CityField.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Baricade.Core.Fields.FinishField">
+    <Position X="1.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Fields\FinishField.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Baricade.Core.Fields.ForestField">
+    <Position X="7.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Fields\ForestField.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Baricade.Core.Fields.RestingField">
+    <Position X="5.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Fields\RestingField.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Baricade.Core.Fields.SpawnField">
+    <Position X="9" Y="5.25" Width="1.5" />
+    <Members>
+      <Property Name="Player" Hidden="true" />
+      <Method Name="SpawnField" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Fields\SpawnField.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
