@@ -198,6 +198,8 @@ namespace Baricade.Client.View
 
         private String Show(Field obj)
         {
+            Console.ForegroundColor = ConsoleColor.Gray;
+
             ContainerField item = obj as ContainerField;
             if(item != null)
             {
@@ -205,8 +207,7 @@ namespace Baricade.Client.View
                 {
                     return "B";
                 }
-            }
-            
+            }         
 
             if (obj is FinishField)
             {
@@ -215,7 +216,11 @@ namespace Baricade.Client.View
             else if (obj is SpawnField)
             {
                 var field = (SpawnField)obj;
-                return field.Player.Number+"";
+                int color = field.Player.Number;
+                Console.ForegroundColor = GetColor(color);
+
+                
+                return field.Children.Count()+"";
             }
             else if (obj is RestingField)
             {
@@ -232,9 +237,27 @@ namespace Baricade.Client.View
             
         }
 
+        private ConsoleColor GetColor(int number)
+        {
+            switch (number)
+            {
+                case (1):
+                    return ConsoleColor.Red;
+                case (2):
+                    return ConsoleColor.Green;
+                case (3):
+                    return ConsoleColor.Yellow;
+                case (4):
+                    return ConsoleColor.Blue;
+
+                default:
+                    return ConsoleColor.Magenta;
+            }
+        }
+
         private void WriteTab()
         {
-            Console.Write("                      ");
+            Console.Write(" ");
         }
     }
 }

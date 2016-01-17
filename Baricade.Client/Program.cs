@@ -12,12 +12,8 @@ namespace Baricade.Client
     {
         static void Main(string[] args)
         {
-            Game game = new Game(new Player(1), new Player(2), new Player(3), new Player(4));
-            
-            BoardView bv = new BoardView();
-
-            bv.Show(game.Board);
-            Console.ReadLine();
+            GameController controller = new GameController();
+            controller.PlayGame();
         }
     }
 }
