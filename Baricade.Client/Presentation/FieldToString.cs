@@ -19,7 +19,7 @@ namespace Baricade.Client.Presentation
             if (field is SpawnField)
             {
                 var sf = field as SpawnField;
-                return $"{sf.Player.Pawns.Count}";
+                return $"{sf.Children.Count}";
             }
 
             if (field is RestingField)
