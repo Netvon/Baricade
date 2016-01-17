@@ -27,6 +27,14 @@ namespace Baricade.Core.Fields
 
             if (IsEmpty)
             {
+                var cf = movable.StandingOn as ContainerField;
+                if (cf != null)
+                    cf.Child = null;
+
+                var collf = movable.StandingOn as CollectionField;
+                if (collf != null)
+                    collf.Children.Remove(movable);
+
                 Child = movable;
             }
             else if (!IsEmpty &&
