@@ -85,6 +85,9 @@ namespace Baricade.Core
                  .AddField(Direction.Up, new CityField())
                  .GetField(Direction.Up);
 
+            var mid = middle as CityField;
+            mid.Child = new Movables.Baricade();
+
             middle.AddField(Direction.Left, new RestingField());
             middle.GetField(Direction.Left)
                   .AddField(Direction.Left, 3, typeof(CityField));
