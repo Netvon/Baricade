@@ -10,12 +10,12 @@ namespace Baricade.Client.Presentation
 {
     public class BoardView
     {
-        public void Show(Board board)
+        public void ShowBoard(Board board)
         {
             
             Console.SetCursorPosition(5, 0);
             WriteTab();
-            Console.WriteLine(Show(board.Finish));
+            Console.WriteLine(ShowField(board.Finish));
             WriteTab();
 
             var field = board.Finish.GetField(Direction.Down);
@@ -27,11 +27,11 @@ namespace Baricade.Client.Presentation
 
             Console.SetCursorPosition(1, 1);
             WriteTab();
-            Console.Write(Show(field));
+            Console.Write(ShowField(field));
             for (int i = 0; i < 8; i++)
             {
                 field = field.GetField(Direction.Right);
-                Console.Write(Show(field));               
+                Console.Write(ShowField(field));               
             }
 
             Console.SetCursorPosition(1, 2);
@@ -46,11 +46,11 @@ namespace Baricade.Client.Presentation
 
             Console.SetCursorPosition(1, 3);
             WriteTab();
-            Console.Write(Show(field));
+            Console.Write(ShowField(field));
             for (int i = 0; i < 8; i++)
             {
                 field = field.GetField(Direction.Right);
-                Console.Write(Show(field));              
+                Console.Write(ShowField(field));              
             }
 
             Console.SetCursorPosition(5, 4);
@@ -71,11 +71,11 @@ namespace Baricade.Client.Presentation
             Console.SetCursorPosition(2, 5);
             WriteTab();
 
-            Console.Write(Show(field));
+            Console.Write(ShowField(field));
             for (int i = 0; i < 6; i++)
             {
                 field = field.GetField(Direction.Right);
-                Console.Write(Show(field));
+                Console.Write(ShowField(field));
             }
 
             Console.SetCursorPosition(2, 6);
@@ -91,11 +91,11 @@ namespace Baricade.Client.Presentation
                 field = field.GetField(Direction.Left);
             }
                      
-            Console.Write(Show(field));
+            Console.Write(ShowField(field));
             for (int i = 0; i < 6; i++)
             {
                 field = field.GetField(Direction.Right);
-                Console.Write(Show(field));
+                Console.Write(ShowField(field));
             }
 
             Console.SetCursorPosition(5, 8);
@@ -115,11 +115,11 @@ namespace Baricade.Client.Presentation
 
             Console.SetCursorPosition(3, 9);
             WriteTab();
-            Console.Write(Show(field));
+            Console.Write(ShowField(field));
             for (int i = 0; i < 4; i++)
             {
                 field = field.GetField(Direction.Right);
-                Console.Write(Show(field));
+                Console.Write(ShowField(field));
             }
 
             Field forest = field.GetField(Direction.Left);
@@ -131,7 +131,7 @@ namespace Baricade.Client.Presentation
 
             Console.SetCursorPosition(3, 10);
             WriteTab();
-            Console.Write("| " + Show(forest) + " |");
+            Console.Write("| " + ShowField(forest) + " |");
 
             Console.SetCursorPosition(3, 11);
             WriteTab();
@@ -141,11 +141,11 @@ namespace Baricade.Client.Presentation
             WriteTab();
             field = board.Origin;
 
-            Console.Write(Show(field));
+            Console.Write(ShowField(field));
             for(int i = 0; i < 10; i++)
             {
                 field = field.GetField(Direction.Right);
-                Console.Write(Show(field));
+                Console.Write(ShowField(field));
             }
 
             Console.SetCursorPosition(0, 13);
@@ -155,11 +155,11 @@ namespace Baricade.Client.Presentation
             field = board.Origin.GetField(Direction.Up);
             Console.SetCursorPosition(0, 12);
             WriteTab();
-            Console.Write(Show(field));
+            Console.Write(ShowField(field));
             for (int i = 0; i < 10; i++)
             {
                 field = field.GetField(Direction.Right);
-                Console.Write(Show(field));
+                Console.Write(ShowField(field));
             }
 
             Console.SetCursorPosition(1, 15);
@@ -172,14 +172,14 @@ namespace Baricade.Client.Presentation
 
             Console.SetCursorPosition(1, 16);
             WriteTab();
-            Console.Write(Show(field));
+            Console.Write(ShowField(field));
 
             field = board.Origin;
             field = field.GetField(Direction.Right);
             field = field.GetField(Direction.Right);
             field = field.GetField(Direction.Right);
             field = field.GetField(Direction.Down);
-            Console.Write(" " + Show(field));
+            Console.Write(" " + ShowField(field));
 
             field = field.GetField(Direction.Up);
             field = field.GetField(Direction.Right);
@@ -187,16 +187,16 @@ namespace Baricade.Client.Presentation
             field = field.GetField(Direction.Right);
             field = field.GetField(Direction.Right);
             field = field.GetField(Direction.Down);
-            Console.Write("   " + Show(field));
+            Console.Write("   " + ShowField(field));
 
             field = field.GetField(Direction.Up);
             field = field.GetField(Direction.Right);   
             field = field.GetField(Direction.Right);
             field = field.GetField(Direction.Down);
-            Console.Write(" " + Show(field));
+            Console.Write(" " + ShowField(field));
         }
 
-        private string Show(Field obj)
+        string ShowField(Field obj)
         {
             return FieldToString.Convert(obj);
             

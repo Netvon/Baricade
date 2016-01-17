@@ -16,7 +16,7 @@ namespace Baricade.Client
 
             BoardView bv = new BoardView();
 
-            bv.Show(game.Board);
+            bv.ShowBoard(game.Board);
             Console.ReadLine();
         }
     }
