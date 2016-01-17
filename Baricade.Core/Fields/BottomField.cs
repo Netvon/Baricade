@@ -7,15 +7,14 @@ using Baricade.Core.Movables;
 
 namespace Baricade.Core.Fields
 {
-    class BottomField : Field
+    class BottomField : ContainerField
     {
-        public override void AcceptMovable(Movable movable)
+        public override bool AcceptMovable(Movable movable)
         {
-            throw new NotImplementedException();
-        }
+            if (movable.GetType() == typeof(Movables.Baricade))
+                return false;
 
-        public override bool CanContainBaricade => false;
-        public override bool CanContainMovable => true;
-        public override bool CanContainMutlipleMovable => false;
+            return base.AcceptMovable(movable);
+        }
     }
 }

@@ -8,9 +8,9 @@ namespace Baricade.Core.Movables
 {
     class Baricade : Movable
     {
-        public override void EndMove()
+        public override bool CanHit(Player player)
         {
-            throw new NotImplementedException();
+            return true;
         }
     }
 }

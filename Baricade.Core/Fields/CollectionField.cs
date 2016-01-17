@@ -9,20 +9,19 @@ namespace Baricade.Core.Fields
 {
     abstract class CollectionField : Field
     {
+        public CollectionField()
+        {
+            Children = new List<Movable>();
+        }
+
         public List<Movable> Children { get; set; }
 
-        public override bool CanContainMovable => false;
-        public override bool CanContainMutlipleMovable => true;
-        public override bool CanContainBaricade => false;
+        public override bool IsEmpty => Children.Count == 0;
 
-        public virtual int MaxChildren => int.MaxValue;
-
-        public override bool IsEmpty => Children?.Count == 0;
-
-        public override void AcceptMovable(Movable movable)
+        public override bool AcceptMovable(Movable movable)
         {
-            if(Children.Count < MaxChildren)
-                Children.Add(movable);
+            Children.Add(movable);
+            return true;
         }
     }
 }

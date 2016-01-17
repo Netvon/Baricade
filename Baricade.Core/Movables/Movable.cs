@@ -14,28 +14,49 @@ namespace Baricade.Core.Movables
         }
 
         public Field StandingOn { get; internal set; }
-        protected virtual bool ClearTraveredFieldOnEnd => true;
+        public Player Owner { get; internal set; }
+        public int AvailableMoves { get; internal set; }
+        public bool IsHit { get; internal set; }
 
         public virtual bool Move(Direction direction)
         {
+            IsHit = false;
+
             var nextField = StandingOn.GetField(direction);
             if (_traversedFields.Contains(nextField))
                 return false;
 
-            var m = nextField.GetContainingMovable();
+            var @out = nextField.AcceptMovable(this);
 
-            if(nextField.CanBeMovedTo && m != null)
-            {
+            if (@out)
+                AvailableMoves--;
 
-            }
+            if (AvailableMoves == 0)
+                EndMove();
 
-            return false;
+            return @out;
         }
 
-        public virtual void EndMove()
+        public void Place(Field placeOn)
         {
-            if(ClearTraveredFieldOnEnd)
-                _traversedFields.Clear();
+            StandingOn = placeOn;
         }
+
+        public void StartMove(int moves)
+        {
+            AvailableMoves = moves;
+        }
+
+        public void EndMove()
+        {
+            _traversedFields.Clear();
+        }
+
+        public void Hit()
+        {
+            IsHit = true;
+        }
+
+        public abstract bool CanHit(Player player);
     }
 }

@@ -24,16 +24,17 @@ namespace Baricade.Core.Fields
             UniqueID = Guid.NewGuid();
         }
 
+        public Field(Field sendToAfterHit)
+            :this()
+        {
+            SendToAfterHit = sendToAfterHit;
+        }
+
         public Guid UniqueID { get; }
-        public virtual bool CanContainMovable => false;
-        public virtual bool CanContainBaricade => false;
-        public virtual bool CanContainMutlipleMovable => false;
-        public virtual bool CanBeMovedTo => false;
         public virtual bool IsEmpty => true;        
 
         public static Field DefaultField => new ContainerField();
-
-        
+        public Field SendToAfterHit { get; set; }
 
         public Field AddField(Field field, Direction location)
         {
@@ -84,11 +85,6 @@ namespace Baricade.Core.Fields
             return GetField(location) != null;
         }
 
-        public abstract void AcceptMovable(Movable movable);
-
-        public virtual IEnumerable<Movable> GetContainingMovable()
-        {
-            return null;
-        }
+        public abstract bool AcceptMovable(Movable movable);
     }
 }

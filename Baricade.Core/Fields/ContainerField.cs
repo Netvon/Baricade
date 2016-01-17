@@ -9,22 +9,43 @@ namespace Baricade.Core.Fields
 {
     public class ContainerField : Field
     {
-        public Movable Child { get; set; }
+        public Movable Child { get; internal set; }
 
-        public override bool CanContainMovable => true;
-        public override bool CanContainMutlipleMovable => false;
-        public override bool CanContainBaricade => true;
-        public override bool CanBeMovedTo => true;
+        public Movable TempChild { get; internal set; }
+
         public override bool IsEmpty => Child == null;
 
-        public override void AcceptMovable(Movable movable)
+        public override bool AcceptMovable(Movable movable)
         {
-            throw new NotImplementedException();
-        }
+            if (movable.GetType() == typeof(Movables.Baricade) && !IsEmpty)
+                return false;
 
-        public override IEnumerable<Movable> GetContainingMovable()
-        {
-            return new[] { Child };
+            if (!IsEmpty &&
+                Child.GetType() == typeof(Movables.Baricade) &&
+                movable.AvailableMoves > 1)
+                return false;
+
+            if (IsEmpty)
+            {
+                Child = movable;
+            }
+            else if (!IsEmpty &&
+               movable.AvailableMoves > 1)
+            {
+                TempChild = movable;
+            }
+            else if (!IsEmpty &&
+                Child.Owner != movable.Owner &&
+                Child.CanHit(movable.Owner) && movable.AvailableMoves == 1)
+            {
+                Child.Hit();
+                SendToAfterHit.AcceptMovable(Child);
+                Child = movable;
+            }
+
+            movable.Place(this);
+
+            return true;
         }
     }
 }
