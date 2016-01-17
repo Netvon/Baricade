@@ -32,6 +32,8 @@ namespace Baricade.Core
         public Field BaricadeCursor { get; internal set; }
         public Movable MovingBaricade { get; internal set; }
 
+        public bool IsWon { get; internal set; }
+
         public Player CurrentPlayer => Players.ElementAt(_currentPlayer);
         public Movable CurrentPawn => CurrentPlayer.Pawns.FirstOrDefault(p => p.Number == _currentPawn);
 

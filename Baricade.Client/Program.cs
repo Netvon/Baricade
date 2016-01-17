@@ -12,7 +12,7 @@ namespace Baricade.Client
     {
         static void Main(string[] args)
         {
-            Game game = Game.GetInstance();            
+            Game game = Game.GetInstance();       
 
             BoardView bv = new BoardView();
 

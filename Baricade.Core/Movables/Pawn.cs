@@ -30,7 +30,7 @@ namespace Baricade.Core.Movables
         {
             if(placeOn.GetType() == typeof(FinishField))
             {
-                // TODO: win game
+                Game.GetInstance().IsWon = true;
             }
 
             base.Place(placeOn);
