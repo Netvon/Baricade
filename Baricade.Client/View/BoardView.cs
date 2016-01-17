@@ -204,6 +204,8 @@ namespace Baricade.Client.View
             field = field.GetField(Direction.Right);
             field = field.GetField(Direction.Down);
             Console.Write(" " + Show(field));
+
+            Console.WriteLine();
         }
 
         private String Show(Field obj)
@@ -213,16 +215,25 @@ namespace Baricade.Client.View
             ContainerField item = obj as ContainerField;
             if(item != null)
             {
-                if(item.Child is Baricade.Core.Movables.Baricade)
+                
+                if(item.Child is Pawn || item.TempChild is Pawn)
                 {
-                    return "B";
-                }
-                else if(item.Child is Pawn)
-                {
-                    var pawn = item.Child as Pawn;
+                    Pawn pawn;
+                    if (item.TempChild != null)
+                    {
+                        pawn = item.TempChild as Pawn;
+                    }
+                    else
+                    {
+                        pawn = item.Child as Pawn;
+                    }
                     Console.ForegroundColor = GetColor(pawn.OwnedBy.Number);
                     
                     return pawn.Number + "";
+                }
+                else if (item.Child is Baricade.Core.Movables.Baricade)
+                {
+                    return "B";
                 }
             }
             if (obj is SpawnField)

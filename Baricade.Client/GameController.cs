@@ -47,8 +47,10 @@ namespace Baricade.Client
                 int i = 0;
                 while (i < number)
                 {
-                    gameview.setCurser();
+                    
                     gameview.Move(number - i);
+
+                    
 
                     String directionString = gameview.GetDirection();
                     var direction = Enum.Parse(typeof(Direction), directionString);
@@ -60,6 +62,7 @@ namespace Baricade.Client
                     }
                     else
                     {
+                        RefreshBoard();
                         gameview.WrongMove();
                     }
                 }

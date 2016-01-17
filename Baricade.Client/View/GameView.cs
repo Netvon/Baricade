@@ -52,6 +52,7 @@ namespace Baricade.Client.View
 
         public void WrongMove()
         {
+            Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.WriteLine("Deze zet is niet mogelijk");
         }
 
