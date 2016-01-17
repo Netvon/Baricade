@@ -18,6 +18,7 @@ namespace Baricade.Core.Movables
         public int AvailableMoves { get; internal set; }
         public bool IsHit { get; internal set; }
         public Field FieldBeforeMove { get; internal set; }
+        public int MovesThisTurn { get; internal set; }
 
         public virtual bool Move(Direction direction)
         {
@@ -47,6 +48,13 @@ namespace Baricade.Core.Movables
         {
             FieldBeforeMove = StandingOn;
             AvailableMoves = moves;
+            MovesThisTurn = moves;
+        }
+
+        public void ResetMove()
+        {
+            AvailableMoves = MovesThisTurn;
+            StandingOn = FieldBeforeMove;
         }
 
         public void EndMove()

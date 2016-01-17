@@ -43,7 +43,7 @@ namespace Baricade.Core
             if (pawnNumber > 0 && pawnNumber <= 4)
             {
                 _currentPawn = pawnNumber;
-                CurrentPawn.AvailableMoves = Dice.LastValue;
+                CurrentPawn.StartMove(Dice.LastValue);
             }
         }
 
