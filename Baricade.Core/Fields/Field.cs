@@ -24,17 +24,10 @@ namespace Baricade.Core.Fields
             UniqueID = Guid.NewGuid();
         }
 
-        public Field(Field sendToAfterHit)
-            :this()
-        {
-            SendToAfterHit = sendToAfterHit;
-        }
-
         public Guid UniqueID { get; }
         public virtual bool IsEmpty => true;        
 
         public static Field DefaultField => new ContainerField();
-        public Field SendToAfterHit { get; set; }
 
         public Field AddField(Direction location, Field field)
         {

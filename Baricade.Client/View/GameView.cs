@@ -28,5 +28,48 @@ namespace Baricade.Client.View
             return input;
             
         }
+
+        public void Move(int number)
+        {
+            Console.WriteLine("Je hebt " + number + " gegooid!");
+            Console.WriteLine("Waar wil je heen?");
+        }
+
+        public String GetDirection()
+        {
+            bool isCorrect = false;
+            String input = "";
+
+            while (!isCorrect)
+            {
+                input = Console.ReadLine();
+                isCorrect = CheckInput(input);
+            }
+            Console.WriteLine(input);
+            return input;           
+        }
+
+        public void WrongMove()
+        {
+            Console.WriteLine("Deze zet is niet mogelijk");
+        }
+
+        private bool CheckInput(String input)
+        {
+            
+            switch (input)
+            {
+                case ("Up"):
+                    return true;
+                case ("Down"):
+                    return true;
+                case ("Left"):
+                    return true;
+                case ("Right"):
+                    return true;
+                default:
+                    return false;
+            }
+        }
     }
 }

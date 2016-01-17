@@ -1,5 +1,6 @@
 ﻿using Baricade.Core;
 using Baricade.Core.Fields;
+using Baricade.Core.Movables;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -206,6 +207,13 @@ namespace Baricade.Client.View
                 if(item.Child is Baricade.Core.Movables.Baricade)
                 {
                     return "B";
+                }
+                else if(item.Child is Pawn)
+                {
+                    var pawn = item.Child as Pawn;
+                    Console.ForegroundColor = GetColor(pawn.OwnedBy.Number);
+                    
+                    return pawn.Number + "";
                 }
             }         
 

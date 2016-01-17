@@ -1,5 +1,6 @@
 ﻿using Baricade.Client.View;
 using Baricade.Core;
+using Baricade.Core.Fields;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace Baricade.Client
 
         public GameController()
         {
-            game = new Game(new Player(1), new Player(2), new Player(3), new Player(4));
+            game = Game.GetInstance();
 
             boardview = new BoardView();
 
@@ -32,7 +33,38 @@ namespace Baricade.Client
 
         public void PlayGame()
         {
-            
+            boardview.Show(game.Board);
+            int pawn = gameview.ShowTurn(game.CurrentPlayer.Number);
+            game.SelectPawnForMove(pawn);
+
+            int number = game.Dice.Roll();
+
+            gameview.Move(number);
+
+            int i = 0;
+            while(i < number)
+            {
+                String directionString = gameview.GetDirection();
+                var direction = Enum.Parse(typeof(Direction), directionString);
+
+                if(game.TryMove((Direction)direction))
+                {
+                    i++;
+                    ClearBoard();
+                }
+                else
+                {
+                    gameview.WrongMove();
+                }               
+            }
+            Console.ReadLine();
         }
+
+        private void ClearBoard()
+        {
+            Console.Clear();
+            boardview.Show(game.Board);
+        }
+        
     }
 }

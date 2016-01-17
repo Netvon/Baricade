@@ -16,10 +16,10 @@ namespace Baricade.Core
 
             Pawns = new List<Pawn>()
             {
-                new Pawn(1),
-                new Pawn(2),
-                new Pawn(3),
-                new Pawn(4)
+                new Pawn(1, this),
+                new Pawn(2, this),
+                new Pawn(3, this),
+                new Pawn(4, this)
             };
 
         }

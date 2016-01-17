@@ -14,14 +14,7 @@ namespace Baricade.Core.Fields
             if (movable.GetType() == typeof(Movables.Baricade))
                 return false;
 
-            var @out = base.AcceptMovable(movable);
-
-            if (@out)
-            {
-                // TODO: win logic
-            }
-
-            return @out;
+            return base.AcceptMovable(movable);
         }
     }
 }
