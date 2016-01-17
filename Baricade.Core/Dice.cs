@@ -18,8 +18,13 @@ namespace Baricade.Core
 
         public int Roll()
         {
-            Random r = new Random();
-            LastValue = r.Next(1, Eyes + 1);
+#if RELEASE
+            //Random r = new Random();
+            //LastValue = r.Next(1, Eyes + 1);
+#else
+            LastValue = 12;
+#endif
+
             return LastValue;
         }
     }

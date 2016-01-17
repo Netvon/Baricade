@@ -13,7 +13,7 @@
   <Class Name="Baricade.Core.Fields.ContainerField">
     <Position X="4.25" Y="4.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AABAAAAAAAAAAIgAAAAAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AABAAAAAAABAAIgAAAAAAAAAAgAAAAAQAAAAAAAAAAA=</HashCode>
       <FileName>Fields\ContainerField.cs</FileName>
     </TypeIdentifier>
   </Class>

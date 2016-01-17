@@ -36,14 +36,18 @@ namespace Baricade.Client.View
             Console.WriteLine("Waar wil je heen?");
         }
 
-        public String GetDirection()
+        public string GetDirection()
         {
             bool isCorrect = false;
-            String input = "";
+            string input = "";
 
             while (!isCorrect)
             {
                 input = Console.ReadLine();
+
+                if (input.ToLower() == "reset")
+                    return input;
+
                 isCorrect = CheckInput(input);
             }
             Console.WriteLine(input);
@@ -56,18 +60,18 @@ namespace Baricade.Client.View
             Console.WriteLine("Deze zet is niet mogelijk");
         }
 
-        private bool CheckInput(String input)
+        private bool CheckInput(string input)
         {
             
-            switch (input)
+            switch (input.ToLower())
             {
-                case ("Up"):
+                case ("up"):
                     return true;
-                case ("Down"):
+                case ("down"):
                     return true;
-                case ("Left"):
+                case ("left"):
                     return true;
-                case ("Right"):
+                case ("right"):
                     return true;
                 default:
                     return false;

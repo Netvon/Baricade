@@ -26,7 +26,7 @@ namespace Baricade.Core.Movables
 
             var nextField = StandingOn.GetField(direction);
 
-            if (nextField == null)
+            if (nextField == null || nextField is SpawnField)
                 return false;
             if (_traversedFields.Contains(nextField))
                 return false;
@@ -59,8 +59,18 @@ namespace Baricade.Core.Movables
 
         public void ResetMove()
         {
+            var cf = StandingOn as ContainerField;
+            if (cf != null)
+                cf.ClearPrevious(this);
+
             AvailableMoves = MovesThisTurn;
+
+            var sf = Game.GetInstance().Board.GetSpawnPointForPlayer(Owner) as SpawnField;
+
+            sf.Children.Add(this);
             StandingOn = FieldBeforeMove;
+
+            _traversedFields.Clear();
         }
 
         public void EndMove()

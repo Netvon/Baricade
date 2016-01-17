@@ -20,6 +20,13 @@ namespace Baricade.Core.Fields
             if (movable.GetType() == typeof(Movables.Baricade) && !IsEmpty)
                 return false;
 
+            if (movable.GetType() == typeof(Movables.Baricade) && IsEmpty)
+            {
+                Child = movable;
+                movable.Place(this);
+                return true;
+            }
+
             if (!IsEmpty &&
                 Child.GetType() == typeof(Movables.Baricade) &&
                 movable.AvailableMoves > 1)
@@ -64,7 +71,7 @@ namespace Baricade.Core.Fields
             return true;
         }
 
-        void ClearPrevious(Movable movable)
+        public void ClearPrevious(Movable movable)
         {
             var cf = movable.StandingOn as ContainerField;
             if (cf != null)

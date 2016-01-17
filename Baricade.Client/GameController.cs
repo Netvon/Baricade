@@ -37,6 +37,25 @@ namespace Baricade.Client
             boardview.Show(game.Board);
             while (!game.IsWon)
             {
+                while(game.IsBaricadeMoveModeActive)
+                {
+                    RefreshBoard();
+
+                    Console.WriteLine("Herplaats de Baricade");
+
+                    var dir = gameview.GetDirection();
+
+                    var direction = Enum.Parse(typeof(Direction), dir, true);
+
+                    if(game.TryMoveBaricadeCursor((Direction)direction))
+                    {
+                        Console.WriteLine("Wil je de baricade plaatsen? (ja/nee)");
+                        var place = Console.ReadLine();
+                        if (place.ToLower() == "ja")
+                            game.TryPlaceBaricade();
+                    }
+                }
+
                 int pawn = gameview.ShowTurn(game.CurrentPlayer.Number);
                 game.SelectPawnForMove(pawn);
                 
@@ -51,6 +70,15 @@ namespace Baricade.Client
                     gameview.Move(number - i); 
 
                     string directionString = gameview.GetDirection();
+
+                    if(directionString == "reset")
+                    {
+                        i = 0;
+                        game.CurrentPawn.ResetMove();
+                        RefreshBoard();
+                        break;
+                    }
+
                     var direction = Enum.Parse(typeof(Direction), directionString, true);
 
                     if (game.TryMove((Direction)direction))
