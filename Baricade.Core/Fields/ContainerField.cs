@@ -29,7 +29,11 @@ namespace Baricade.Core.Fields
             {
                 var cf = movable.StandingOn as ContainerField;
                 if (cf != null)
+                {
                     cf.Child = null;
+                    if (cf.TempChild == movable)
+                        cf.TempChild = null;
+                }
 
                 var collf = movable.StandingOn as CollectionField;
                 if (collf != null)
