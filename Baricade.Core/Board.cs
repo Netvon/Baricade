@@ -1,4 +1,5 @@
 ﻿using Baricade.Core.Fields;
+using Baricade.Core.Movables;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,10 +10,16 @@ namespace Baricade.Core
 {
     public class Board
     {
+        Dictionary<Player, Field> _spawnPoints;
+        Field _forestField;
+
         public Board(Game game)
         {
             Width = 11;
             Height = 8;
+
+            _spawnPoints = new Dictionary<Player, Field>();
+
             CreateBoard(game);
         }
 
@@ -149,8 +156,11 @@ namespace Baricade.Core
             third.GetField(Direction.Right, 2)
                  .AddField(Direction.Right, 2);
 
+            _forestField = new ForestField();
+
             third.GetField(Direction.Right, 2)
-                 .AddField(Direction.Down, new ForestField());
+                 .AddField(Direction.Down, _forestField);
+
 
             // Link Second & Third
             second.GetField(Direction.Right, 7)
@@ -205,19 +215,46 @@ namespace Baricade.Core
 
         void CreateSpawnPoints(Game game, Field first)
         {
-            first.GetField(Direction.Right)
-                           .AddField(Direction.Down, new SpawnField(game.Players.ElementAt(0)));
-            first.GetField(Direction.Right, 3)
-               .AddField(Direction.Down, new SpawnField(game.Players.ElementAt(1)));
-            first.GetField(Direction.Right, 7)
-               .AddField(Direction.Down, new SpawnField(game.Players.ElementAt(2)));
-            first.GetField(Direction.Right, 9)
-               .AddField(Direction.Down, new SpawnField(game.Players.ElementAt(3)));
+            var sp1 = first.GetField(Direction.Right)
+                 .AddField(Direction.Down, new SpawnField(game.Players.ElementAt(0)))
+                 .GetField(Direction.Down);
+
+            var sp2 = first.GetField(Direction.Right, 3)
+               .AddField(Direction.Down, new SpawnField(game.Players.ElementAt(1)))
+               .GetField(Direction.Down);
+
+            var sp3 = first.GetField(Direction.Right, 7)
+               .AddField(Direction.Down, new SpawnField(game.Players.ElementAt(2)))
+               .GetField(Direction.Down);
+
+            var sp4 = first.GetField(Direction.Right, 9)
+               .AddField(Direction.Down, new SpawnField(game.Players.ElementAt(3)))
+               .GetField(Direction.Down);
+
+            _spawnPoints.Add(game.Players.ElementAt(0), sp1);
+            _spawnPoints.Add(game.Players.ElementAt(1), sp2);
+            _spawnPoints.Add(game.Players.ElementAt(2), sp3);
+            _spawnPoints.Add(game.Players.ElementAt(3), sp4);
         }
 
         Field CreateBottomRow(BottomField origin)
         {
             return origin.AddField(Direction.Right, 10, typeof(BottomField));
+        }
+
+        internal Field GetSpawnPointForPlayer(Player player)
+        {
+            return _spawnPoints[player];
+        }
+
+        internal Field GetReturnPoint(Movable movable)
+        {
+            if (movable.StandingOn.GetType() == typeof(CityField))
+            {
+                return _forestField;
+            }
+
+            return GetSpawnPointForPlayer(movable.Owner);
         }
     }
 }

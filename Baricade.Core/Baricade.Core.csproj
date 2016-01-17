@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Board.cs" />
+    <Compile Include="Dice.cs" />
     <Compile Include="Fields\BottomField.cs" />
     <Compile Include="Fields\CityField.cs" />
     <Compile Include="Fields\CollectionField.cs" />

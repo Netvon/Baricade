@@ -8,7 +8,13 @@ using System.Threading.Tasks;
 namespace Baricade.Core.Movables
 {
     public class Pawn : Movable
-    {        
+    {
+        public Pawn(int number)
+        {
+            Number = number;
+        }
+
+        public int Number { get; }
 
         public Player OwnedBy { get; set; }
 
@@ -18,6 +24,16 @@ namespace Baricade.Core.Movables
                 return false;
 
             return true;
+        }
+
+        public override void Place(Field placeOn)
+        {
+            if(placeOn.GetType() == typeof(FinishField))
+            {
+                // TODO: win game
+            }
+
+            base.Place(placeOn);
         }
     }
 }
