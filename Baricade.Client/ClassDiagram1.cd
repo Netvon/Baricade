@@ -1,18 +1,4 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
-  <Class Name="Baricade.Client.Presentation.BoardView">
-    <Position X="3.5" Y="2" Width="2.25" />
-    <TypeIdentifier>
-      <HashCode>AAAAAACAAAAAAAAAAAIAAAAAAACAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Presentation\BoardView.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Baricade.Client.Presentation.FieldToString">
-    <Position X="9.5" Y="1.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Presentation\FieldToString.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
