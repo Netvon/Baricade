@@ -1041,6 +1041,44 @@
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
+          <association
+            Id="3172085c-de2a-4232-a33c-50f784093da7"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName="Dice"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="1165638d-df37-4244-b9bb-4a968eafb098"
+              LastKnownName="Dice"
+              LastKnownLocation="Baricade.Architecture.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="8e84e035-7ca8-412b-8ccb-43bf60785fe9"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="7155a1d5-4557-481a-8538-e8ca2b06c8ba"
+                  name="Dice"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
         </targetEnds>
         <ownedOperationsInternal>
           <operation
@@ -1216,6 +1254,14 @@
           </generalization>
         </generalsInternal>
       </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="1165638d-df37-4244-b9bb-4a968eafb098"
+        name="Dice"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType

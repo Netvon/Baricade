@@ -17,6 +17,7 @@ namespace Baricade.Core.Movables
         public Player Owner { get; internal set; }
         public int AvailableMoves { get; internal set; }
         public bool IsHit { get; internal set; }
+        public Field FieldBeforeMove { get; internal set; }
 
         public virtual bool Move(Direction direction)
         {
@@ -37,13 +38,14 @@ namespace Baricade.Core.Movables
             return @out;
         }
 
-        public void Place(Field placeOn)
+        public virtual void Place(Field placeOn)
         {
             StandingOn = placeOn;
         }
 
         public void StartMove(int moves)
         {
+            FieldBeforeMove = StandingOn;
             AvailableMoves = moves;
         }
 

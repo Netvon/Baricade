@@ -9,12 +9,20 @@ namespace Baricade.Core
 {
     public class Player
     {
-        public Player(int number)
+        public Player(Game game, int number)
         {
+            Game = game;
             Number = number;
         }
 
+        public Player(int number)
+            :this(null, number)
+        {
+
+        }
+
         public int Number { get; }
-        List<Pawn> Pawns { get; set; }
+        List<Pawn> Pawns { get; }
+        public Game Game { get; set; }
     }
 }

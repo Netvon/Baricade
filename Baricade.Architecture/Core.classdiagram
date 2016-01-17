@@ -361,6 +361,22 @@
             </relationshipOwnedElementsInternal>
             <elementDefinition Id="d8b49f5f-9daf-467b-9b89-04f423d4b0ff" />
           </association>
+          <association Id="09cc468e-671e-4a86-8d92-071a7d5b47fd" isDerived="false" sourceEndRoleName="" targetEndRoleName="Dice" isLeaf="false" isAbstract="false">
+            <classMoniker Id="ff541066-ba49-4908-b29c-c846da4e945f" LastKnownName="Dice" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="0a14303c-2919-4485-b601-ba38f23f83f2" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="8e84e035-7ca8-412b-8ccb-43bf60785fe9" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="66c6b566-bae7-4ea8-b383-161a5d92ce76" name="Dice" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="7155a1d5-4557-481a-8538-e8ca2b06c8ba" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="3172085c-de2a-4232-a33c-50f784093da7" />
+          </association>
         </targetEnds>
         <ownedOperationsInternal>
           <operation Id="1eafcaae-d3a2-4dd3-b403-c73821fae82a" name="GetPlayer" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
@@ -468,6 +484,11 @@
             <elementDefinition Id="0877b0ab-ea74-4bca-b102-513f128032ba" />
           </generalization>
         </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="ff541066-ba49-4908-b29c-c846da4e945f" name="Dice" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="1165638d-df37-4244-b9bb-4a968eafb098" />
       </class>
     </logicalClassDesignerModelHasTypes>
   </packagedElements>
