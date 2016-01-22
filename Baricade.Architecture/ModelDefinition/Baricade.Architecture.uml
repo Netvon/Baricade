@@ -21,7 +21,7 @@
     <packageHasNamedElement>
       <class
         Id="b45bc70d-7ae2-4b36-8634-3d279866fe00"
-        name="Field"
+        name="BaseField"
         isAbstract="true"
         isLeaf="false"
         isActiveClass="false">
@@ -30,7 +30,7 @@
             Id="ebc4a9e1-2534-4b0c-a2a4-67565741925f"
             isDerived="false"
             sourceEndRoleName="Field"
-            targetEndRoleName=""
+            targetEndRoleName="Board"
             isLeaf="false"
             isAbstract="false">
             <classMoniker
@@ -54,19 +54,20 @@
                     <literalString
                       Id="4d2ce4df-6cc8-4d12-a8f8-e4a48fd981a2"
                       name="Lower"
-                      value="0" />
+                      value="7" />
                   </lowerValueInternal>
                   <upperValueInternal>
                     <literalString
                       Id="38ae9d5a-738f-43fd-ba5d-3e468525afd0"
                       name="Upper"
-                      value="*" />
+                      value="7" />
                   </upperValueInternal>
                 </memberEnd>
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="f3d2e7f8-2955-4ae0-84b3-dc2bdd807a60"
+                  name="Board"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -86,7 +87,7 @@
             isAbstract="false">
             <classMoniker
               Id="b45bc70d-7ae2-4b36-8634-3d279866fe00"
-              LastKnownName="Field"
+              LastKnownName="BaseField"
               LastKnownLocation="Baricade.Architecture.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -180,7 +181,7 @@
             isSubstitutable="false">
             <classMoniker
               Id="b45bc70d-7ae2-4b36-8634-3d279866fe00"
-              LastKnownName="Field"
+              LastKnownName="BaseField"
               LastKnownLocation="Baricade.Architecture.uml" />
           </generalization>
         </generalsInternal>
@@ -194,7 +195,7 @@
             isAbstract="false">
             <classMoniker
               Id="6b8d0320-a4bc-47b1-b1b7-5ccac5d6a9c7"
-              LastKnownName="Movable"
+              LastKnownName="BaseMovable"
               LastKnownLocation="Baricade.Architecture.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -229,6 +230,70 @@
                   <upperValueInternal>
                     <literalString
                       Id="c5e78636-32e2-46e9-ba0a-16cecc5cc971"
+                      name="Upper"
+                      value="1" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="934ee173-4f57-4a5e-8ce0-1752cb316f92"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName="SendToAfterHit"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="9c34e9ee-1c86-44d4-b596-3cd47140ed16"
+              LastKnownName="CollectionField"
+              LastKnownLocation="Baricade.Architecture.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="e9f6fcd6-0bb5-4b27-9aaf-5b80aa685b1d"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="6f05b55c-e506-47f4-a878-0bdff868dbba"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="ee26c4c1-ee5d-4d09-b086-66be7b0911f6"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="a3f495de-186a-44f4-af47-ecf5b8b23f44"
+                  name="SendToAfterHit"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="dec06f6d-73a3-4660-b1c7-131e815c9ed2"
+                      name="Lower"
+                      value="0" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="4b0fd4a6-5adb-4e10-801c-b4b88306b207"
                       name="Upper"
                       value="1" />
                   </upperValueInternal>
@@ -298,7 +363,7 @@
             isSubstitutable="false">
             <classMoniker
               Id="b45bc70d-7ae2-4b36-8634-3d279866fe00"
-              LastKnownName="Field"
+              LastKnownName="BaseField"
               LastKnownLocation="Baricade.Architecture.uml" />
           </generalization>
         </generalsInternal>
@@ -312,7 +377,7 @@
             isAbstract="false">
             <classMoniker
               Id="6b8d0320-a4bc-47b1-b1b7-5ccac5d6a9c7"
-              LastKnownName="Movable"
+              LastKnownName="BaseMovable"
               LastKnownLocation="Baricade.Architecture.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -392,8 +457,8 @@
     <packageHasNamedElement>
       <class
         Id="6b8d0320-a4bc-47b1-b1b7-5ccac5d6a9c7"
-        name="Movable"
-        isAbstract="false"
+        name="BaseMovable"
+        isAbstract="true"
         isLeaf="false"
         isActiveClass="false">
         <targetEnds>
@@ -406,7 +471,7 @@
             isAbstract="false">
             <classMoniker
               Id="b45bc70d-7ae2-4b36-8634-3d279866fe00"
-              LastKnownName="Field"
+              LastKnownName="BaseField"
               LastKnownLocation="Baricade.Architecture.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -451,7 +516,7 @@
             isSubstitutable="false">
             <classMoniker
               Id="6b8d0320-a4bc-47b1-b1b7-5ccac5d6a9c7"
-              LastKnownName="Movable"
+              LastKnownName="BaseMovable"
               LastKnownLocation="Baricade.Architecture.uml" />
           </generalization>
         </generalsInternal>
@@ -470,7 +535,7 @@
             isSubstitutable="false">
             <classMoniker
               Id="6b8d0320-a4bc-47b1-b1b7-5ccac5d6a9c7"
-              LastKnownName="Movable"
+              LastKnownName="BaseMovable"
               LastKnownLocation="Baricade.Architecture.uml" />
           </generalization>
         </generalsInternal>
@@ -837,7 +902,7 @@
             messageKind="Found"
             messageSort="AsynchCall"
             createSelfMessage="false"
-            signatureText="+ MovePawn(player : Player, pawn : Movable, moves : Direction[1..*]) : Boolean">
+            signatureText="+ MovePawn(player : Baricade.Architecture::Player, pawn : Baricade.Architecture::BaseMovable, moves : Baricade.Architecture::Direction[1..*]) : Boolean">
             <sendEvent>
               <lostFoundTargetMoniker
                 Id="0e308429-1599-459e-b0e2-1a559134c9f4"
@@ -1151,7 +1216,7 @@
                   <type_NamedElement>
                     <classMoniker
                       Id="6b8d0320-a4bc-47b1-b1b7-5ccac5d6a9c7"
-                      LastKnownName="Movable"
+                      LastKnownName="BaseMovable"
                       LastKnownLocation="Baricade.Architecture.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -1296,7 +1361,7 @@
                 LastKnownLocation="Baricade.Architecture.uml" />
               <lifelineMoniker
                 Id="cd4b57f4-6732-46f2-ad5b-c836c3f02060"
-                LastKnownName="Child : Movable"
+                LastKnownName="Child : BaseMovable"
                 LastKnownLocation="Baricade.Architecture.uml" />
             </coveredLifelines>
             <operands>
@@ -1322,7 +1387,7 @@
                     LastKnownLocation="Baricade.Architecture.uml" />
                   <lifelineMoniker
                     Id="cd4b57f4-6732-46f2-ad5b-c836c3f02060"
-                    LastKnownName="Child : Movable"
+                    LastKnownName="Child : BaseMovable"
                     LastKnownLocation="Baricade.Architecture.uml" />
                 </coveredLifelines>
                 <fragments>
@@ -1435,7 +1500,7 @@
                     LastKnownLocation="Baricade.Architecture.uml" />
                   <lifelineMoniker
                     Id="cd4b57f4-6732-46f2-ad5b-c836c3f02060"
-                    LastKnownName="Child : Movable"
+                    LastKnownName="Child : BaseMovable"
                     LastKnownLocation="Baricade.Architecture.uml" />
                 </coveredLifelines>
                 <fragments>
@@ -1445,12 +1510,12 @@
                     interactionOperator="Loop">
                     <coveredLifelines>
                       <lifelineMoniker
-                        Id="a22e3438-cfd0-4f8f-9538-1d878a2356be"
-                        LastKnownName="Game"
-                        LastKnownLocation="Baricade.Architecture.uml" />
-                      <lifelineMoniker
                         Id="46e856a6-cfcb-478c-bce7-afcc1dd8aea9"
                         LastKnownName="User"
+                        LastKnownLocation="Baricade.Architecture.uml" />
+                      <lifelineMoniker
+                        Id="a22e3438-cfd0-4f8f-9538-1d878a2356be"
+                        LastKnownName="Game"
                         LastKnownLocation="Baricade.Architecture.uml" />
                       <lifelineMoniker
                         Id="b473b8d5-0014-40c8-bf1b-1f8c9e3321c2"
@@ -1462,7 +1527,7 @@
                         LastKnownLocation="Baricade.Architecture.uml" />
                       <lifelineMoniker
                         Id="cd4b57f4-6732-46f2-ad5b-c836c3f02060"
-                        LastKnownName="Child : Movable"
+                        LastKnownName="Child : BaseMovable"
                         LastKnownLocation="Baricade.Architecture.uml" />
                     </coveredLifelines>
                     <operands>
@@ -1471,12 +1536,12 @@
                         name="InteractionOperand1">
                         <coveredLifelines>
                           <lifelineMoniker
-                            Id="a22e3438-cfd0-4f8f-9538-1d878a2356be"
-                            LastKnownName="Game"
-                            LastKnownLocation="Baricade.Architecture.uml" />
-                          <lifelineMoniker
                             Id="46e856a6-cfcb-478c-bce7-afcc1dd8aea9"
                             LastKnownName="User"
+                            LastKnownLocation="Baricade.Architecture.uml" />
+                          <lifelineMoniker
+                            Id="a22e3438-cfd0-4f8f-9538-1d878a2356be"
+                            LastKnownName="Game"
                             LastKnownLocation="Baricade.Architecture.uml" />
                           <lifelineMoniker
                             Id="b473b8d5-0014-40c8-bf1b-1f8c9e3321c2"
@@ -1488,7 +1553,7 @@
                             LastKnownLocation="Baricade.Architecture.uml" />
                           <lifelineMoniker
                             Id="cd4b57f4-6732-46f2-ad5b-c836c3f02060"
-                            LastKnownName="Child : Movable"
+                            LastKnownName="Child : BaseMovable"
                             LastKnownLocation="Baricade.Architecture.uml" />
                         </coveredLifelines>
                         <fragments>
@@ -1498,12 +1563,12 @@
                             interactionOperator="Loop">
                             <coveredLifelines>
                               <lifelineMoniker
-                                Id="a22e3438-cfd0-4f8f-9538-1d878a2356be"
-                                LastKnownName="Game"
-                                LastKnownLocation="Baricade.Architecture.uml" />
-                              <lifelineMoniker
                                 Id="46e856a6-cfcb-478c-bce7-afcc1dd8aea9"
                                 LastKnownName="User"
+                                LastKnownLocation="Baricade.Architecture.uml" />
+                              <lifelineMoniker
+                                Id="a22e3438-cfd0-4f8f-9538-1d878a2356be"
+                                LastKnownName="Game"
                                 LastKnownLocation="Baricade.Architecture.uml" />
                               <lifelineMoniker
                                 Id="b473b8d5-0014-40c8-bf1b-1f8c9e3321c2"
@@ -1515,7 +1580,7 @@
                                 LastKnownLocation="Baricade.Architecture.uml" />
                               <lifelineMoniker
                                 Id="cd4b57f4-6732-46f2-ad5b-c836c3f02060"
-                                LastKnownName="Child : Movable"
+                                LastKnownName="Child : BaseMovable"
                                 LastKnownLocation="Baricade.Architecture.uml" />
                             </coveredLifelines>
                             <operands>
@@ -1524,12 +1589,12 @@
                                 name="InteractionOperand1">
                                 <coveredLifelines>
                                   <lifelineMoniker
-                                    Id="a22e3438-cfd0-4f8f-9538-1d878a2356be"
-                                    LastKnownName="Game"
-                                    LastKnownLocation="Baricade.Architecture.uml" />
-                                  <lifelineMoniker
                                     Id="46e856a6-cfcb-478c-bce7-afcc1dd8aea9"
                                     LastKnownName="User"
+                                    LastKnownLocation="Baricade.Architecture.uml" />
+                                  <lifelineMoniker
+                                    Id="a22e3438-cfd0-4f8f-9538-1d878a2356be"
+                                    LastKnownName="Game"
                                     LastKnownLocation="Baricade.Architecture.uml" />
                                   <lifelineMoniker
                                     Id="b473b8d5-0014-40c8-bf1b-1f8c9e3321c2"
@@ -1541,7 +1606,7 @@
                                     LastKnownLocation="Baricade.Architecture.uml" />
                                   <lifelineMoniker
                                     Id="cd4b57f4-6732-46f2-ad5b-c836c3f02060"
-                                    LastKnownName="Child : Movable"
+                                    LastKnownName="Child : BaseMovable"
                                     LastKnownLocation="Baricade.Architecture.uml" />
                                 </coveredLifelines>
                                 <fragments>
@@ -1551,12 +1616,12 @@
                                     interactionOperator="Alt">
                                     <coveredLifelines>
                                       <lifelineMoniker
-                                        Id="cd4b57f4-6732-46f2-ad5b-c836c3f02060"
-                                        LastKnownName="Child : Movable"
-                                        LastKnownLocation="Baricade.Architecture.uml" />
-                                      <lifelineMoniker
                                         Id="ffe82558-9285-4fd7-9756-1ecfbf1f64fd"
                                         LastKnownName="ContainerField"
+                                        LastKnownLocation="Baricade.Architecture.uml" />
+                                      <lifelineMoniker
+                                        Id="cd4b57f4-6732-46f2-ad5b-c836c3f02060"
+                                        LastKnownName="Child : BaseMovable"
                                         LastKnownLocation="Baricade.Architecture.uml" />
                                     </coveredLifelines>
                                     <operands>
@@ -1565,12 +1630,12 @@
                                         name="InteractionOperand1">
                                         <coveredLifelines>
                                           <lifelineMoniker
-                                            Id="cd4b57f4-6732-46f2-ad5b-c836c3f02060"
-                                            LastKnownName="Child : Movable"
-                                            LastKnownLocation="Baricade.Architecture.uml" />
-                                          <lifelineMoniker
                                             Id="ffe82558-9285-4fd7-9756-1ecfbf1f64fd"
                                             LastKnownName="ContainerField"
+                                            LastKnownLocation="Baricade.Architecture.uml" />
+                                          <lifelineMoniker
+                                            Id="cd4b57f4-6732-46f2-ad5b-c836c3f02060"
+                                            LastKnownName="Child : BaseMovable"
                                             LastKnownLocation="Baricade.Architecture.uml" />
                                         </coveredLifelines>
                                         <guard>
@@ -1800,7 +1865,7 @@
             <covered>
               <lifelineMoniker
                 Id="cd4b57f4-6732-46f2-ad5b-c836c3f02060"
-                LastKnownName="Child : Movable"
+                LastKnownName="Child : BaseMovable"
                 LastKnownLocation="Baricade.Architecture.uml" />
             </covered>
           </operandOccurrenceSpecification>
@@ -1875,22 +1940,22 @@
             </covered>
           </executionOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="b55bdbc2-0425-47fb-b770-ae123a2b4f0e"
-            name="MessageOccurrenceSpecification7">
-            <covered>
-              <lifelineMoniker
-                Id="a22e3438-cfd0-4f8f-9538-1d878a2356be"
-                LastKnownName="Game"
-                LastKnownLocation="Baricade.Architecture.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="a32e05c6-4b7d-4771-9e51-8d17df1550d2"
             name="MessageOccurrenceSpecification6">
             <covered>
               <lifelineMoniker
                 Id="46e856a6-cfcb-478c-bce7-afcc1dd8aea9"
                 LastKnownName="User"
+                LastKnownLocation="Baricade.Architecture.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="b55bdbc2-0425-47fb-b770-ae123a2b4f0e"
+            name="MessageOccurrenceSpecification7">
+            <covered>
+              <lifelineMoniker
+                Id="a22e3438-cfd0-4f8f-9538-1d878a2356be"
+                LastKnownName="Game"
                 LastKnownLocation="Baricade.Architecture.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -2003,22 +2068,22 @@
             </covered>
           </messageOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="9ac289c8-6494-4b06-be08-c7625496a261"
-            name="MessageOccurrenceSpecification16">
-            <covered>
-              <lifelineMoniker
-                Id="a22e3438-cfd0-4f8f-9538-1d878a2356be"
-                LastKnownName="Game"
-                LastKnownLocation="Baricade.Architecture.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="efc4bb9f-32cb-477c-b024-15ca9034cdf7"
             name="MessageOccurrenceSpecification17">
             <covered>
               <lifelineMoniker
                 Id="46e856a6-cfcb-478c-bce7-afcc1dd8aea9"
                 LastKnownName="User"
+                LastKnownLocation="Baricade.Architecture.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="9ac289c8-6494-4b06-be08-c7625496a261"
+            name="MessageOccurrenceSpecification16">
+            <covered>
+              <lifelineMoniker
+                Id="a22e3438-cfd0-4f8f-9538-1d878a2356be"
+                LastKnownName="Game"
                 LastKnownLocation="Baricade.Architecture.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -2205,22 +2270,22 @@
             </covered>
           </executionOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="31810e58-5864-4e7c-a6f4-e9f1c3927495"
-            name="MessageOccurrenceSpecification23">
-            <covered>
-              <lifelineMoniker
-                Id="b473b8d5-0014-40c8-bf1b-1f8c9e3321c2"
-                LastKnownName="Pawn"
-                LastKnownLocation="Baricade.Architecture.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="772ae923-c4dd-47e6-a1b7-acaac8d7eb6a"
             name="MessageOccurrenceSpecification22">
             <covered>
               <lifelineMoniker
                 Id="a22e3438-cfd0-4f8f-9538-1d878a2356be"
                 LastKnownName="Game"
+                LastKnownLocation="Baricade.Architecture.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="31810e58-5864-4e7c-a6f4-e9f1c3927495"
+            name="MessageOccurrenceSpecification23">
+            <covered>
+              <lifelineMoniker
+                Id="b473b8d5-0014-40c8-bf1b-1f8c9e3321c2"
+                LastKnownName="Pawn"
                 LastKnownLocation="Baricade.Architecture.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -2383,22 +2448,22 @@
             </covered>
           </executionOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="f0b6f76d-05cb-468c-a375-d00308749892"
-            name="MessageOccurrenceSpecification31">
-            <covered>
-              <lifelineMoniker
-                Id="ffe82558-9285-4fd7-9756-1ecfbf1f64fd"
-                LastKnownName="ContainerField"
-                LastKnownLocation="Baricade.Architecture.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="9a5c656b-fc4b-4861-ac69-b31157c4da82"
             name="MessageOccurrenceSpecification30">
             <covered>
               <lifelineMoniker
                 Id="b473b8d5-0014-40c8-bf1b-1f8c9e3321c2"
                 LastKnownName="Pawn"
+                LastKnownLocation="Baricade.Architecture.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="f0b6f76d-05cb-468c-a375-d00308749892"
+            name="MessageOccurrenceSpecification31">
+            <covered>
+              <lifelineMoniker
+                Id="ffe82558-9285-4fd7-9756-1ecfbf1f64fd"
+                LastKnownName="ContainerField"
                 LastKnownLocation="Baricade.Architecture.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -2621,12 +2686,22 @@
             </covered>
           </executionOccurrenceSpecification>
           <operandOccurrenceSpecification
-            Id="4479f837-447e-4c50-8e2f-bffe402bfbdf"
-            name="OperandOccurrenceSpecification24">
+            Id="4c05af57-d8e3-41a4-a11c-1f665e873289"
+            name="OperandOccurrenceSpecification18">
             <covered>
               <lifelineMoniker
-                Id="ffe82558-9285-4fd7-9756-1ecfbf1f64fd"
-                LastKnownName="ContainerField"
+                Id="a22e3438-cfd0-4f8f-9538-1d878a2356be"
+                LastKnownName="Game"
+                LastKnownLocation="Baricade.Architecture.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification
+            Id="f1896a0b-cdbe-4fdd-8371-c020f89262dd"
+            name="OperandOccurrenceSpecification74">
+            <covered>
+              <lifelineMoniker
+                Id="cd4b57f4-6732-46f2-ad5b-c836c3f02060"
+                LastKnownName="Child : BaseMovable"
                 LastKnownLocation="Baricade.Architecture.uml" />
             </covered>
           </operandOccurrenceSpecification>
@@ -2641,32 +2716,22 @@
             </covered>
           </operandOccurrenceSpecification>
           <operandOccurrenceSpecification
+            Id="4479f837-447e-4c50-8e2f-bffe402bfbdf"
+            name="OperandOccurrenceSpecification24">
+            <covered>
+              <lifelineMoniker
+                Id="ffe82558-9285-4fd7-9756-1ecfbf1f64fd"
+                LastKnownName="ContainerField"
+                LastKnownLocation="Baricade.Architecture.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification
             Id="b26a8d95-52e2-4b80-96db-d0b85e671548"
             name="OperandOccurrenceSpecification20">
             <covered>
               <lifelineMoniker
                 Id="46e856a6-cfcb-478c-bce7-afcc1dd8aea9"
                 LastKnownName="User"
-                LastKnownLocation="Baricade.Architecture.uml" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification
-            Id="f1896a0b-cdbe-4fdd-8371-c020f89262dd"
-            name="OperandOccurrenceSpecification74">
-            <covered>
-              <lifelineMoniker
-                Id="cd4b57f4-6732-46f2-ad5b-c836c3f02060"
-                LastKnownName="Child : Movable"
-                LastKnownLocation="Baricade.Architecture.uml" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification
-            Id="4c05af57-d8e3-41a4-a11c-1f665e873289"
-            name="OperandOccurrenceSpecification18">
-            <covered>
-              <lifelineMoniker
-                Id="a22e3438-cfd0-4f8f-9538-1d878a2356be"
-                LastKnownName="Game"
                 LastKnownLocation="Baricade.Architecture.uml" />
             </covered>
           </operandOccurrenceSpecification>
@@ -2706,7 +2771,7 @@
             <covered>
               <lifelineMoniker
                 Id="cd4b57f4-6732-46f2-ad5b-c836c3f02060"
-                LastKnownName="Child : Movable"
+                LastKnownName="Child : BaseMovable"
                 LastKnownLocation="Baricade.Architecture.uml" />
             </covered>
           </operandOccurrenceSpecification>
@@ -2721,22 +2786,22 @@
             </covered>
           </operandOccurrenceSpecification>
           <operandOccurrenceSpecification
-            Id="eb5129fe-92e4-4dab-b41d-02173554c0de"
-            name="OperandOccurrenceSpecification55">
-            <covered>
-              <lifelineMoniker
-                Id="46e856a6-cfcb-478c-bce7-afcc1dd8aea9"
-                LastKnownName="User"
-                LastKnownLocation="Baricade.Architecture.uml" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification
             Id="75c424c4-e6f5-463b-953c-481fb74146d8"
             name="OperandOccurrenceSpecification57">
             <covered>
               <lifelineMoniker
                 Id="b473b8d5-0014-40c8-bf1b-1f8c9e3321c2"
                 LastKnownName="Pawn"
+                LastKnownLocation="Baricade.Architecture.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification
+            Id="eb5129fe-92e4-4dab-b41d-02173554c0de"
+            name="OperandOccurrenceSpecification55">
+            <covered>
+              <lifelineMoniker
+                Id="46e856a6-cfcb-478c-bce7-afcc1dd8aea9"
+                LastKnownName="User"
                 LastKnownLocation="Baricade.Architecture.uml" />
             </covered>
           </operandOccurrenceSpecification>
@@ -2766,7 +2831,7 @@
             <covered>
               <lifelineMoniker
                 Id="cd4b57f4-6732-46f2-ad5b-c836c3f02060"
-                LastKnownName="Child : Movable"
+                LastKnownName="Child : BaseMovable"
                 LastKnownLocation="Baricade.Architecture.uml" />
             </covered>
           </operandOccurrenceSpecification>
@@ -2821,16 +2886,6 @@
             </covered>
           </executionOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="3987f0c4-8c8d-4e85-a43d-436a52f7ad6e"
-            name="MessageOccurrenceSpecification36">
-            <covered>
-              <lifelineMoniker
-                Id="46e856a6-cfcb-478c-bce7-afcc1dd8aea9"
-                LastKnownName="User"
-                LastKnownLocation="Baricade.Architecture.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="af69921c-7299-44d8-b8ed-f7c91e19babb"
             name="MessageOccurrenceSpecification37">
             <covered>
@@ -2841,8 +2896,8 @@
             </covered>
           </messageOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="66e3516c-54a0-47e2-a860-8f87a308034c"
-            name="MessageOccurrenceSpecification39">
+            Id="3987f0c4-8c8d-4e85-a43d-436a52f7ad6e"
+            name="MessageOccurrenceSpecification36">
             <covered>
               <lifelineMoniker
                 Id="46e856a6-cfcb-478c-bce7-afcc1dd8aea9"
@@ -2857,6 +2912,16 @@
               <lifelineMoniker
                 Id="a22e3438-cfd0-4f8f-9538-1d878a2356be"
                 LastKnownName="Game"
+                LastKnownLocation="Baricade.Architecture.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="66e3516c-54a0-47e2-a860-8f87a308034c"
+            name="MessageOccurrenceSpecification39">
+            <covered>
+              <lifelineMoniker
+                Id="46e856a6-cfcb-478c-bce7-afcc1dd8aea9"
+                LastKnownName="User"
                 LastKnownLocation="Baricade.Architecture.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -2987,12 +3052,32 @@
             </covered>
           </executionOccurrenceSpecification>
           <operandOccurrenceSpecification
+            Id="917b8b5e-2e86-46a2-8b22-89b2d24343c6"
+            name="OperandOccurrenceSpecification65">
+            <covered>
+              <lifelineMoniker
+                Id="b473b8d5-0014-40c8-bf1b-1f8c9e3321c2"
+                LastKnownName="Pawn"
+                LastKnownLocation="Baricade.Architecture.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification
+            Id="9cad2a24-feeb-4b52-9505-14d1f980bc8f"
+            name="OperandOccurrenceSpecification67">
+            <covered>
+              <lifelineMoniker
+                Id="ffe82558-9285-4fd7-9756-1ecfbf1f64fd"
+                LastKnownName="ContainerField"
+                LastKnownLocation="Baricade.Architecture.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification
             Id="94f9941e-944c-46eb-bc17-f0a2529ec8b6"
             name="OperandOccurrenceSpecification69">
             <covered>
               <lifelineMoniker
                 Id="cd4b57f4-6732-46f2-ad5b-c836c3f02060"
-                LastKnownName="Child : Movable"
+                LastKnownName="Child : BaseMovable"
                 LastKnownLocation="Baricade.Architecture.uml" />
             </covered>
           </operandOccurrenceSpecification>
@@ -3013,26 +3098,6 @@
               <lifelineMoniker
                 Id="46e856a6-cfcb-478c-bce7-afcc1dd8aea9"
                 LastKnownName="User"
-                LastKnownLocation="Baricade.Architecture.uml" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification
-            Id="9cad2a24-feeb-4b52-9505-14d1f980bc8f"
-            name="OperandOccurrenceSpecification67">
-            <covered>
-              <lifelineMoniker
-                Id="ffe82558-9285-4fd7-9756-1ecfbf1f64fd"
-                LastKnownName="ContainerField"
-                LastKnownLocation="Baricade.Architecture.uml" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification
-            Id="917b8b5e-2e86-46a2-8b22-89b2d24343c6"
-            name="OperandOccurrenceSpecification65">
-            <covered>
-              <lifelineMoniker
-                Id="b473b8d5-0014-40c8-bf1b-1f8c9e3321c2"
-                LastKnownName="Pawn"
                 LastKnownLocation="Baricade.Architecture.uml" />
             </covered>
           </operandOccurrenceSpecification>
@@ -3095,22 +3160,22 @@
             </covered>
           </executionOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="7d8bef59-a34c-43c9-9cc9-af6ac5c7658e"
-            name="MessageOccurrenceSpecification44">
-            <covered>
-              <lifelineMoniker
-                Id="46e856a6-cfcb-478c-bce7-afcc1dd8aea9"
-                LastKnownName="User"
-                LastKnownLocation="Baricade.Architecture.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="4d3982c9-2484-4f9a-8431-2c4be2621b68"
             name="MessageOccurrenceSpecification45">
             <covered>
               <lifelineMoniker
                 Id="a22e3438-cfd0-4f8f-9538-1d878a2356be"
                 LastKnownName="Game"
+                LastKnownLocation="Baricade.Architecture.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="7d8bef59-a34c-43c9-9cc9-af6ac5c7658e"
+            name="MessageOccurrenceSpecification44">
+            <covered>
+              <lifelineMoniker
+                Id="46e856a6-cfcb-478c-bce7-afcc1dd8aea9"
+                LastKnownName="User"
                 LastKnownLocation="Baricade.Architecture.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -3416,7 +3481,7 @@
             <covered>
               <lifelineMoniker
                 Id="cd4b57f4-6732-46f2-ad5b-c836c3f02060"
-                LastKnownName="Child : Movable"
+                LastKnownName="Child : BaseMovable"
                 LastKnownLocation="Baricade.Architecture.uml" />
             </covered>
           </operandOccurrenceSpecification>
@@ -3436,7 +3501,7 @@
             <coveredLifelines>
               <lifelineMoniker
                 Id="cd4b57f4-6732-46f2-ad5b-c836c3f02060"
-                LastKnownName="Child : Movable"
+                LastKnownName="Child : BaseMovable"
                 LastKnownLocation="Baricade.Architecture.uml" />
             </coveredLifelines>
             <finish>
@@ -3476,10 +3541,20 @@
             <covered>
               <lifelineMoniker
                 Id="cd4b57f4-6732-46f2-ad5b-c836c3f02060"
-                LastKnownName="Child : Movable"
+                LastKnownName="Child : BaseMovable"
                 LastKnownLocation="Baricade.Architecture.uml" />
             </covered>
           </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="109954a1-ff62-4865-93fe-4834018239f7"
+            name="MessageOccurrenceSpecification65">
+            <covered>
+              <lifelineMoniker
+                Id="cd4b57f4-6732-46f2-ad5b-c836c3f02060"
+                LastKnownName="Child : BaseMovable"
+                LastKnownLocation="Baricade.Architecture.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
           <messageOccurrenceSpecification
             Id="91657019-7f0f-40a2-8555-00673fd720b5"
             name="MessageOccurrenceSpecification64">
@@ -3491,22 +3566,12 @@
             </covered>
           </messageOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="109954a1-ff62-4865-93fe-4834018239f7"
-            name="MessageOccurrenceSpecification65">
-            <covered>
-              <lifelineMoniker
-                Id="cd4b57f4-6732-46f2-ad5b-c836c3f02060"
-                LastKnownName="Child : Movable"
-                LastKnownLocation="Baricade.Architecture.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="d72b655a-d19a-4249-a714-aa2f8bb479f5"
             name="MessageOccurrenceSpecification66">
             <covered>
               <lifelineMoniker
                 Id="cd4b57f4-6732-46f2-ad5b-c836c3f02060"
-                LastKnownName="Child : Movable"
+                LastKnownName="Child : BaseMovable"
                 LastKnownLocation="Baricade.Architecture.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -3534,7 +3599,7 @@
             <covered>
               <lifelineMoniker
                 Id="cd4b57f4-6732-46f2-ad5b-c836c3f02060"
-                LastKnownName="Child : Movable"
+                LastKnownName="Child : BaseMovable"
                 LastKnownLocation="Baricade.Architecture.uml" />
             </covered>
           </executionOccurrenceSpecification>
@@ -3554,7 +3619,7 @@
             <covered>
               <lifelineMoniker
                 Id="cd4b57f4-6732-46f2-ad5b-c836c3f02060"
-                LastKnownName="Child : Movable"
+                LastKnownName="Child : BaseMovable"
                 LastKnownLocation="Baricade.Architecture.uml" />
             </covered>
           </operandOccurrenceSpecification>
@@ -3609,22 +3674,22 @@
             </covered>
           </executionOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="2ac8b1cc-1260-48b2-8d58-eb1e586d01d7"
-            name="MessageOccurrenceSpecification69">
-            <covered>
-              <lifelineMoniker
-                Id="b473b8d5-0014-40c8-bf1b-1f8c9e3321c2"
-                LastKnownName="Pawn"
-                LastKnownLocation="Baricade.Architecture.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="b0472b44-98a0-4539-8c46-ad7a6424c846"
             name="MessageOccurrenceSpecification68">
             <covered>
               <lifelineMoniker
                 Id="ffe82558-9285-4fd7-9756-1ecfbf1f64fd"
                 LastKnownName="ContainerField"
+                LastKnownLocation="Baricade.Architecture.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="2ac8b1cc-1260-48b2-8d58-eb1e586d01d7"
+            name="MessageOccurrenceSpecification69">
+            <covered>
+              <lifelineMoniker
+                Id="b473b8d5-0014-40c8-bf1b-1f8c9e3321c2"
+                LastKnownName="Pawn"
                 LastKnownLocation="Baricade.Architecture.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -3786,7 +3851,7 @@
             <covered>
               <lifelineMoniker
                 Id="cd4b57f4-6732-46f2-ad5b-c836c3f02060"
-                LastKnownName="Child : Movable"
+                LastKnownName="Child : BaseMovable"
                 LastKnownLocation="Baricade.Architecture.uml" />
             </covered>
           </operandOccurrenceSpecification>
@@ -3831,6 +3896,26 @@
             </covered>
           </operandOccurrenceSpecification>
           <operandOccurrenceSpecification
+            Id="b3a9315a-a4df-4436-ba55-ea2b2e0572d3"
+            name="OperandOccurrenceSpecification56">
+            <covered>
+              <lifelineMoniker
+                Id="46e856a6-cfcb-478c-bce7-afcc1dd8aea9"
+                LastKnownName="User"
+                LastKnownLocation="Baricade.Architecture.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification
+            Id="043d5fa4-a6fa-49a3-90ea-b6b5daaa48ce"
+            name="OperandOccurrenceSpecification54">
+            <covered>
+              <lifelineMoniker
+                Id="a22e3438-cfd0-4f8f-9538-1d878a2356be"
+                LastKnownName="Game"
+                LastKnownLocation="Baricade.Architecture.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification
             Id="493d65e6-a2a9-4fa2-840f-09a30e69e16e"
             name="OperandOccurrenceSpecification58">
             <covered>
@@ -3856,27 +3941,17 @@
             <covered>
               <lifelineMoniker
                 Id="cd4b57f4-6732-46f2-ad5b-c836c3f02060"
-                LastKnownName="Child : Movable"
+                LastKnownName="Child : BaseMovable"
                 LastKnownLocation="Baricade.Architecture.uml" />
             </covered>
           </operandOccurrenceSpecification>
           <operandOccurrenceSpecification
-            Id="043d5fa4-a6fa-49a3-90ea-b6b5daaa48ce"
-            name="OperandOccurrenceSpecification54">
+            Id="f948b970-fd91-446a-b107-82587e388c47"
+            name="OperandOccurrenceSpecification30">
             <covered>
               <lifelineMoniker
-                Id="a22e3438-cfd0-4f8f-9538-1d878a2356be"
-                LastKnownName="Game"
-                LastKnownLocation="Baricade.Architecture.uml" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification
-            Id="b3a9315a-a4df-4436-ba55-ea2b2e0572d3"
-            name="OperandOccurrenceSpecification56">
-            <covered>
-              <lifelineMoniker
-                Id="46e856a6-cfcb-478c-bce7-afcc1dd8aea9"
-                LastKnownName="User"
+                Id="b473b8d5-0014-40c8-bf1b-1f8c9e3321c2"
+                LastKnownName="Pawn"
                 LastKnownLocation="Baricade.Architecture.uml" />
             </covered>
           </operandOccurrenceSpecification>
@@ -3906,17 +3981,7 @@
             <covered>
               <lifelineMoniker
                 Id="cd4b57f4-6732-46f2-ad5b-c836c3f02060"
-                LastKnownName="Child : Movable"
-                LastKnownLocation="Baricade.Architecture.uml" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification
-            Id="f948b970-fd91-446a-b107-82587e388c47"
-            name="OperandOccurrenceSpecification30">
-            <covered>
-              <lifelineMoniker
-                Id="b473b8d5-0014-40c8-bf1b-1f8c9e3321c2"
-                LastKnownName="Pawn"
+                LastKnownName="Child : BaseMovable"
                 LastKnownLocation="Baricade.Architecture.uml" />
             </covered>
           </operandOccurrenceSpecification>
@@ -4253,9 +4318,9 @@
           </lifeline>
           <lifeline
             Id="cd4b57f4-6732-46f2-ad5b-c836c3f02060"
-            name="Child : Movable"
+            name="Child : BaseMovable"
             isActor="false"
-            lifelineDisplayName="Child : Movable">
+            lifelineDisplayName="Child : BaseMovable">
             <represents>
               <propertyMoniker
                 Id="4845afad-6964-4560-93b6-771bf7b6a99b"
@@ -4943,7 +5008,7 @@
             <type_NamedElement>
               <classMoniker
                 Id="6b8d0320-a4bc-47b1-b1b7-5ccac5d6a9c7"
-                LastKnownName="Movable"
+                LastKnownName="BaseMovable"
                 LastKnownLocation="Baricade.Architecture.uml" />
             </type_NamedElement>
           </property>

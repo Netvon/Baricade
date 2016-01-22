@@ -2,21 +2,21 @@
 <logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="a2435600-bd42-4178-a6f2-62ae0821f77d" name="Core" linkedPackageId="47da56ca-7a92-4e0d-b255-2c1d2d424566" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <packagedElements>
     <logicalClassDesignerModelHasTypes>
-      <class Id="71c07fc6-379b-41e7-bc0a-e269f144261f" name="Field" isAbstract="true" isLeaf="false" isActiveClass="false">
+      <class Id="71c07fc6-379b-41e7-bc0a-e269f144261f" name="BaseField" isAbstract="true" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="b45bc70d-7ae2-4b36-8634-3d279866fe00" />
         <targetEnds>
-          <association Id="24adf31e-00e4-4dbf-a754-a6aa488b3053" isDerived="false" sourceEndRoleName="Field" targetEndRoleName="" isLeaf="false" isAbstract="false">
+          <association Id="24adf31e-00e4-4dbf-a754-a6aa488b3053" isDerived="false" sourceEndRoleName="Field" targetEndRoleName="Board" isLeaf="false" isAbstract="false">
             <classMoniker Id="cf6537e9-c160-40d1-8cf1-16863f4a350f" LastKnownName="Board" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd Id="56607bf6-6efc-40b1-b8cc-7403dbd420a5" name="Field" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
                   <lowerValueInternal>
-                    <literalString Id="67429e2e-1261-406b-9e4a-f51af4e52ecf" name="Lower" value="0">
+                    <literalString Id="67429e2e-1261-406b-9e4a-f51af4e52ecf" name="Lower" value="7">
                       <elementDefinition Id="4d2ce4df-6cc8-4d12-a8f8-e4a48fd981a2" />
                     </literalString>
                   </lowerValueInternal>
                   <upperValueInternal>
-                    <literalString Id="ce74e53c-ed4e-4164-b4a7-5839359bfb01" name="Upper" value="*">
+                    <literalString Id="ce74e53c-ed4e-4164-b4a7-5839359bfb01" name="Upper" value="7">
                       <elementDefinition Id="38ae9d5a-738f-43fd-ba5d-3e468525afd0" />
                     </literalString>
                   </upperValueInternal>
@@ -24,7 +24,7 @@
                 </memberEnd>
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
-                <memberEnd Id="fd57c297-4610-4bf4-bddf-d35ada21a5f9" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                <memberEnd Id="fd57c297-4610-4bf4-bddf-d35ada21a5f9" name="Board" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
                   <elementDefinition Id="f3d2e7f8-2955-4ae0-84b3-dc2bdd807a60" />
                 </memberEnd>
               </associationHasOwnedEnds>
@@ -32,7 +32,7 @@
             <elementDefinition Id="ebc4a9e1-2534-4b0c-a2a4-67565741925f" />
           </association>
           <association Id="058b1d50-4f5b-4a07-847c-e231cefa03de" isDerived="false" sourceEndRoleName="Field" targetEndRoleName="Field" isLeaf="false" isAbstract="false">
-            <classMoniker Id="71c07fc6-379b-41e7-bc0a-e269f144261f" LastKnownName="Field" />
+            <classMoniker Id="71c07fc6-379b-41e7-bc0a-e269f144261f" LastKnownName="BaseField" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd Id="8d97f6af-a062-4cbc-ae28-6eca7c2cde9c" name="Field" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
@@ -94,13 +94,13 @@
         <elementDefinition Id="3e57a738-12f4-4f69-97af-a8c763748c8a" />
         <generalsInternal>
           <generalization Id="5f1e8ee8-3e34-46aa-998a-2ad3b9f8a52f" isSubstitutable="false">
-            <classMoniker Id="71c07fc6-379b-41e7-bc0a-e269f144261f" LastKnownName="Field" />
+            <classMoniker Id="71c07fc6-379b-41e7-bc0a-e269f144261f" LastKnownName="BaseField" />
             <elementDefinition Id="11d9b7ec-234e-4009-b0b9-5c72a2952f5d" />
           </generalization>
         </generalsInternal>
         <targetEnds>
           <association Id="b8325d80-a2c9-4231-a8ca-a8907ebdd8e7" isDerived="false" sourceEndRoleName="" targetEndRoleName="Movable" isLeaf="false" isAbstract="false">
-            <classMoniker Id="5ed76c77-551e-4e48-b96c-d009c936d9f8" LastKnownName="Movable" />
+            <classMoniker Id="5ed76c77-551e-4e48-b96c-d009c936d9f8" LastKnownName="BaseMovable" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd Id="cf4adc84-082b-4fb0-aa7b-7868d1578006" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
@@ -124,6 +124,42 @@
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
             <elementDefinition Id="fba9bba6-cbd6-4ebc-abac-dcf34b2967d7" />
+          </association>
+          <association Id="571fdd2a-13b6-4959-8c44-546e9c25eca2" isDerived="false" sourceEndRoleName="" targetEndRoleName="SendToAfterHit" isLeaf="false" isAbstract="false">
+            <classMoniker Id="b44c3856-2b81-4a6e-8b2d-c6f69e685e6b" LastKnownName="CollectionField" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="28516a64-a7ba-4c69-8a8f-f8a8ecc77bd5" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString Id="974225a8-a829-4836-99b2-49da214ae4fb" name="Lower" value="*">
+                      <elementDefinition Id="6f05b55c-e506-47f4-a878-0bdff868dbba" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="25451f5b-b215-49e5-839f-81f9aa379e36" name="Upper" value="*">
+                      <elementDefinition Id="ee26c4c1-ee5d-4d09-b086-66be7b0911f6" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="e9f6fcd6-0bb5-4b27-9aaf-5b80aa685b1d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="6e453967-5f4a-4c5f-9d3b-6345ffdddd1c" name="SendToAfterHit" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="0932ecb7-1a41-4f91-b883-ab1ab0dd8820" name="Lower" value="0">
+                      <elementDefinition Id="dec06f6d-73a3-4660-b1c7-131e815c9ed2" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="ab0420a8-a77b-48ae-ab03-a0ca299e5d72" name="Upper" value="1">
+                      <elementDefinition Id="4b0fd4a6-5adb-4e10-801c-b4b88306b207" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="a3f495de-186a-44f4-af47-ecf5b8b23f44" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="934ee173-4f57-4a5e-8ce0-1752cb316f92" />
           </association>
         </targetEnds>
       </class>
@@ -160,13 +196,13 @@
         <elementDefinition Id="9c34e9ee-1c86-44d4-b596-3cd47140ed16" />
         <generalsInternal>
           <generalization Id="6f124de1-921d-4c68-b03f-d00dee893c65" isSubstitutable="false">
-            <classMoniker Id="71c07fc6-379b-41e7-bc0a-e269f144261f" LastKnownName="Field" />
+            <classMoniker Id="71c07fc6-379b-41e7-bc0a-e269f144261f" LastKnownName="BaseField" />
             <elementDefinition Id="314705a7-7f11-4b39-9b96-65bd2a5348b6" />
           </generalization>
         </generalsInternal>
         <targetEnds>
           <association Id="4a7b461f-6924-4928-b6c8-63c485318bb7" isDerived="false" sourceEndRoleName="" targetEndRoleName="Movable" isLeaf="false" isAbstract="false">
-            <classMoniker Id="5ed76c77-551e-4e48-b96c-d009c936d9f8" LastKnownName="Movable" />
+            <classMoniker Id="5ed76c77-551e-4e48-b96c-d009c936d9f8" LastKnownName="BaseMovable" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd Id="8b0892a7-7365-491e-974c-d636ff1b5062" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
@@ -216,11 +252,11 @@
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
-      <class Id="5ed76c77-551e-4e48-b96c-d009c936d9f8" name="Movable" isAbstract="false" isLeaf="false" isActiveClass="false">
+      <class Id="5ed76c77-551e-4e48-b96c-d009c936d9f8" name="BaseMovable" isAbstract="true" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="6b8d0320-a4bc-47b1-b1b7-5ccac5d6a9c7" />
         <targetEnds>
           <association Id="1d8aecf7-0979-4087-ba2d-246d58ba9856" isDerived="false" sourceEndRoleName="" targetEndRoleName="StandingOn" isLeaf="false" isAbstract="false">
-            <classMoniker Id="71c07fc6-379b-41e7-bc0a-e269f144261f" LastKnownName="Field" />
+            <classMoniker Id="71c07fc6-379b-41e7-bc0a-e269f144261f" LastKnownName="BaseField" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd Id="e74f2289-c7c8-43e8-8db0-4f60cfb3477f" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
@@ -243,7 +279,7 @@
         <elementDefinition Id="c3a588a9-1b0d-4e9d-b94b-1e6ffd2962b3" />
         <generalsInternal>
           <generalization Id="63311375-8851-44ad-aa73-d5dbf71a1844" isSubstitutable="false">
-            <classMoniker Id="5ed76c77-551e-4e48-b96c-d009c936d9f8" LastKnownName="Movable" />
+            <classMoniker Id="5ed76c77-551e-4e48-b96c-d009c936d9f8" LastKnownName="BaseMovable" />
             <elementDefinition Id="f11a101e-a815-49d4-9a49-971059ab2685" />
           </generalization>
         </generalsInternal>
@@ -254,7 +290,7 @@
         <elementDefinition Id="60e762c8-1bdd-407d-816a-8d3cae9eab4f" />
         <generalsInternal>
           <generalization Id="91940b24-6524-45ba-a0b8-112dd34de20a" isSubstitutable="false">
-            <classMoniker Id="5ed76c77-551e-4e48-b96c-d009c936d9f8" LastKnownName="Movable" />
+            <classMoniker Id="5ed76c77-551e-4e48-b96c-d009c936d9f8" LastKnownName="BaseMovable" />
             <elementDefinition Id="e1588682-cb58-4cb9-b8c1-909c2516271b" />
           </generalization>
         </generalsInternal>
@@ -415,7 +451,7 @@
                 <parameter Id="60a4e719-9cf9-4b0c-b22d-535bca21234f" name="pawn" direction="In" isUnique="false">
                   <elementDefinition Id="7c194580-b58e-43f6-87e0-bfd5b211db52" />
                   <type_NamedElement>
-                    <referencedTypeMoniker Id="a4610604-7a50-4ee5-8436-e8267942c65f" LastKnownName="Movable" />
+                    <referencedTypeMoniker Id="a4610604-7a50-4ee5-8436-e8267942c65f" LastKnownName="BaseMovable" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -456,7 +492,7 @@
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <referencedType Id="a4610604-7a50-4ee5-8436-e8267942c65f" name="Movable" isAbstract="false" isLeaf="false" cachedFullName="Baricade.Architecture::Movable">
+      <referencedType Id="a4610604-7a50-4ee5-8436-e8267942c65f" name="BaseMovable" isAbstract="false" isLeaf="false" cachedFullName="Baricade.Architecture::BaseMovable">
         <elementDefinition Id="6b8d0320-a4bc-47b1-b1b7-5ccac5d6a9c7" />
       </referencedType>
     </packageHasNamedElement>
