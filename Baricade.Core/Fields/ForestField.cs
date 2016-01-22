@@ -9,12 +9,6 @@ namespace Baricade.Core.Fields
 {
     public class ForestField : CollectionField
     {
-        public override bool AcceptMovable(Movable movable)
-        {
-            if (!movable.IsHit || movable.GetType() == typeof(Movables.Baricade))
-                return false;
-
-            return base.AcceptMovable(movable);
-        }
+        
     }
 }

@@ -7,68 +7,114 @@ using System.Threading.Tasks;
 
 namespace Baricade.Core.Fields
 {
-    public class ContainerField : Field
+    public class ContainerField : BaseField
     {
-        public Movable Child { get; internal set; }
+        private Movable _tempChild;
+        private Movable _child;
 
-        public Movable TempChild { get; internal set; }
+        public Movable Child
+        {
+            get { return _child; }
+            set
+            {
+                _child = value;
+                if(_child != null)
+                {
+                    _child.StandingOn = this;
+                }               
+            }
+        }
+        public Movable TempChild
+        {
+            get { return _tempChild; }
+            set
+            {
+                _tempChild = value;
+                if(_tempChild != null)
+                {
+                    _tempChild.StandingOn = this;
+                }               
+            }
+        }
+
+        
 
         public override bool IsEmpty => Child == null;
 
-        public override bool AcceptMovable(Movable movable)
+        public override bool AcceptMove(Movable movable)
         {
-            if (movable.GetType() == typeof(Movables.Baricade) && !IsEmpty)
-                return false;
-
-            if (movable.GetType() == typeof(Movables.Baricade) && IsEmpty)
+            if(movable is Movables.Pawn)
             {
-                Child = movable;
-                movable.Place(this);
-                return true;
+                if(Child is Movables.Baricade)
+                {
+                    if(movable.HasMovesLeft)
+                    {
+                        return false;
+                    }                   
+                }
+                else 
+                {
+                    if(!IsEmpty)
+                    {
+                        var pawn = movable as Pawn;
+                        var child = Child as Pawn;
+                        if (pawn.Owner == child.Owner && movable.IsLastMove)
+                        {
+                            return false;
+                        }
+                    }                    
+                }
             }
+            return true;
+        }
 
-            if (!IsEmpty &&
-                Child.GetType() == typeof(Movables.Baricade) &&
-                movable.AvailableMoves > 1)
-                return false;
-
-            if (IsEmpty)
+        public void Place(Movable movable)
+        {
+            if(movable.HasMovesLeft)
             {
+                RemovePreviousMovable(movable);
 
-                ClearPrevious(movable);
-
-                Child = movable;
-            }
-            else if (!IsEmpty &&
-               movable.AvailableMoves > 1)
-            {
-                ClearPrevious(movable);
                 TempChild = movable;
             }
-            else if (!IsEmpty &&
-                Child.Owner != movable.Owner &&
-                Child.CanHit(movable.Owner) && movable.AvailableMoves == 1)
+            else
             {
-                Child.Hit();
-
-                if(Child.GetType() == typeof(Movables.Baricade))
+                if(!IsEmpty)
                 {
-                    Game.GetInstance().SetBaricadeMoveMode(Child);
+                    //geslagen Child gaat naar juiste collectionfield'
+                    var sendToAfterHit = SendToAfterHit(Child as Pawn);
+                    sendToAfterHit.Children.Add(Child);
+                    Child.StandingOn = sendToAfterHit;
+                    //baricademode moet worden aangezet als baricade wordt geslagen
                 }
-                else
-                {
-                    var sendTo = Game.GetInstance().Board.GetReturnPoint(Child);
-                    sendTo.AcceptMovable(Child);
-                }
-
-                ClearPrevious(movable);
-
-                Child = movable;
+                RemovePreviousMovable(movable);
+                
+                Child = movable;                
             }
+        }
 
-            movable.Place(this);
-
-            return true;
+        void RemovePreviousMovable(Movable movable)
+        {
+            if (movable.IsFirstMove)
+            {
+                var standingOnContainer = movable.StandingOn as ContainerField;
+                if (standingOnContainer == null)
+                {
+                    var standingOnCollection = movable.StandingOn as CollectionField;
+                    standingOnCollection.Children.Remove(movable);
+                }
+                else //container
+                {
+                    standingOnContainer.Child = null;
+                }
+            }
+            else
+            {
+                var standingOnContainer = movable.StandingOn as ContainerField;
+                if (standingOnContainer != null)
+                {
+                    standingOnContainer.TempChild = null;
+                }
+            }
         }
 
         public void ClearPrevious(Movable movable)
@@ -92,6 +138,11 @@ namespace Baricade.Core.Fields
             var cf = movable.StandingOn as ContainerField;
             if (cf != null && cf.TempChild == movable)
                 cf.TempChild = null;
+        }
+
+        public virtual CollectionField SendToAfterHit(Pawn pawn)
+        {
+            return null;
         }
     }
 }

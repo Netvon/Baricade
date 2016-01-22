@@ -128,7 +128,7 @@ namespace Baricade.Client.View
                 Console.Write(Show(field));
             }
 
-            Field forest = field.GetField(Direction.Left);
+            BaseField forest = field.GetField(Direction.Left);
             for (int i = 0; i < 1; i++)
             {
                 forest = forest.GetField(Direction.Left);
@@ -208,7 +208,7 @@ namespace Baricade.Client.View
             Console.WriteLine();
         }
 
-        private String Show(Field obj)
+        private String Show(BaseField obj)
         {
             Console.ForegroundColor = ConsoleColor.Gray;
 
@@ -294,7 +294,7 @@ namespace Baricade.Client.View
 
         private void WriteTab()
         {
-            Console.Write(" ");
+            Console.Write("                     ");
         }
     }
 }

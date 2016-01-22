@@ -22,7 +22,7 @@ namespace Baricade.Core.Fields
         }
         public Player Player { get; }
 
-        public override bool AcceptMovable(Movable movable)
+        public override bool AcceptMove(Movable movable)
         {
             if (movable.GetType() == typeof(Movables.Baricade))
                 return false;
@@ -31,7 +31,7 @@ namespace Baricade.Core.Fields
                 return false;
 
             if (Children.Count < 4)
-                return base.AcceptMovable(movable);
+                return base.AcceptMove(movable);
 
             return false;
         }

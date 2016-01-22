@@ -10,21 +10,22 @@ namespace Baricade.Core
 {
     public class Board
     {
-        Dictionary<Player, Field> _spawnPoints;
-        Field _forestField;
+        Dictionary<Player, CollectionField> _spawnPoints;
+        CollectionField _forestField;
 
         public Board(Game game)
         {
             Width = 11;
             Height = 8;
 
-            _spawnPoints = new Dictionary<Player, Field>();
+            _spawnPoints = new Dictionary<Player, CollectionField>();
 
             CreateBoard(game);
         }
 
-        public Field Origin { get; private set; }
-        public Field Finish { get; private set; }
+        public CollectionField Forest => _forestField;
+        public BaseField Origin { get; private set; }
+        public BaseField Finish { get; private set; }
         public int Width { get; }
         public int Height { get; }
 
@@ -33,28 +34,28 @@ namespace Baricade.Core
             var origin = new BottomField();
 
             // Bottom Row
-            Field first = CreateBottomRow(origin);
+            BaseField first = CreateBottomRow(origin);
 
             // Spawn points
             CreateSpawnPoints(game, first);
 
             // Second Row
-            Field second = CreateSecondRow(first);
+            BaseField second = CreateSecondRow(first);
 
             // Third Row
-            Field third = CreateThridRow(second);
+            BaseField third = CreateThridRow(second);
 
             // Fourth Row
-            Field fourth = CreateFourthRow(third);
+            BaseField fourth = CreateFourthRow(third);
 
             // Fifth Row
-            Field fifth = CreateFifthRow(fourth);
+            BaseField fifth = CreateFifthRow(fourth);
 
             // Sixth Row
-            Field sixth = CreateSixthRow(fifth);
+            BaseField sixth = CreateSixthRow(fifth);
 
             // Seventh Row
-            Field seventh = CreateSeventhRow(sixth);
+            BaseField seventh = CreateSeventhRow(sixth);
 
             Finish = seventh.GetField(Direction.Right, 4)
                    .AddField(Direction.Up, new FinishField()).GetField(Direction.Up);
@@ -62,7 +63,7 @@ namespace Baricade.Core
             Origin = origin;
         }
 
-        Field CreateSeventhRow(Field sixth)
+        BaseField CreateSeventhRow(BaseField sixth)
         {
             sixth.AddField(Direction.Up, new CityField());
 
@@ -80,7 +81,7 @@ namespace Baricade.Core
             return seventh;
         }
 
-        Field CreateSixthRow(Field fifth)
+        BaseField CreateSixthRow(BaseField fifth)
         {
             var middle = fifth.GetField(Direction.Right, 3)
                  .AddField(Direction.Up, new CityField())
@@ -103,7 +104,7 @@ namespace Baricade.Core
             return sixth;
         }
 
-        Field CreateFifthRow(Field fourth)
+        BaseField CreateFifthRow(BaseField fourth)
         {
             var fifth = fourth.AddField(Direction.Up, new CityField())
                   .GetField(Direction.Up);
@@ -124,7 +125,7 @@ namespace Baricade.Core
             return fifth;
         }
 
-        Field CreateFourthRow(Field third)
+        BaseField CreateFourthRow(BaseField third)
         {
             var middle = third.GetField(Direction.Right, 3)
                   .AddField(Direction.Up)
@@ -155,7 +156,7 @@ namespace Baricade.Core
 
         }
 
-        Field CreateThridRow(Field second)
+        BaseField CreateThridRow(BaseField second)
         {
             var third = second.GetField(Direction.Right, 3)
                                           .AddField(Direction.Up)
@@ -182,7 +183,7 @@ namespace Baricade.Core
             return third;
         }
 
-        Field CreateSecondRow(Field first)
+        BaseField CreateSecondRow(BaseField first)
         {
             var second = first.AddField(Direction.Up, new RestingField())
                                         .GetField(Direction.Up);
@@ -226,7 +227,7 @@ namespace Baricade.Core
             return second;
         }
 
-        void CreateSpawnPoints(Game game, Field first)
+        void CreateSpawnPoints(Game game, BaseField first)
         {
             var sp1 = first.GetField(Direction.Right)
                  .AddField(Direction.Down, new SpawnField(game.Players.ElementAt(0)))
@@ -244,30 +245,20 @@ namespace Baricade.Core
                .AddField(Direction.Down, new SpawnField(game.Players.ElementAt(3)))
                .GetField(Direction.Down);
 
-            _spawnPoints.Add(game.Players.ElementAt(0), sp1);
-            _spawnPoints.Add(game.Players.ElementAt(1), sp2);
-            _spawnPoints.Add(game.Players.ElementAt(2), sp3);
-            _spawnPoints.Add(game.Players.ElementAt(3), sp4);
+            _spawnPoints.Add(game.Players.ElementAt(0), sp1 as CollectionField);
+            _spawnPoints.Add(game.Players.ElementAt(1), sp2 as CollectionField);
+            _spawnPoints.Add(game.Players.ElementAt(2), sp3 as CollectionField);
+            _spawnPoints.Add(game.Players.ElementAt(3), sp4 as CollectionField);
         }
 
-        Field CreateBottomRow(BottomField origin)
+        BaseField CreateBottomRow(BottomField origin)
         {
             return origin.AddField(Direction.Right, 10, typeof(BottomField));
         }
 
-        internal Field GetSpawnPointForPlayer(Player player)
+        internal CollectionField GetSpawnPointForPlayer(Player player)
         {
             return _spawnPoints[player];
-        }
-
-        internal Field GetReturnPoint(Movable movable)
-        {
-            if (movable.StandingOn.GetType() == typeof(CityField))
-            {
-                return _forestField;
-            }
-
-            return GetSpawnPointForPlayer(movable.Owner);
         }
     }
 }

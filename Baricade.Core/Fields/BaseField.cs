@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace Baricade.Core.Fields
 {
-    public abstract class Field
+    public abstract class BaseField
     {
-        Dictionary<Direction, Field> _fieldDictionary;
+        Dictionary<Direction, BaseField> _fieldDictionary;
 
-        public Field()
+        public BaseField()
         {
-            _fieldDictionary = new Dictionary<Direction, Field>();
+            _fieldDictionary = new Dictionary<Direction, BaseField>();
 
             _fieldDictionary.Add(Direction.Up, null);
             _fieldDictionary.Add(Direction.Down, null);
@@ -24,12 +24,13 @@ namespace Baricade.Core.Fields
             UniqueID = Guid.NewGuid();
         }
 
+        public Board Board => Game.Current.Board;
         public Guid UniqueID { get; }
         public virtual bool IsEmpty => true;        
 
-        public static Field DefaultField => new ContainerField();
+        public static BaseField DefaultField => new ContainerField();
 
-        public Field AddField(Direction location, Field field)
+        public BaseField AddField(Direction location, BaseField field)
         {
             _fieldDictionary[location] = field;
 
@@ -39,22 +40,22 @@ namespace Baricade.Core.Fields
             return this;
         }
 
-        public Field AddField(Direction location)
+        public BaseField AddField(Direction location)
         {
             return AddField(location, DefaultField);
         }
 
-        public Field AddField(Direction location, int count)
+        public BaseField AddField(Direction location, int count)
         {
             return AddField(location, count, typeof(ContainerField));
         }
 
-        public Field AddField(Direction location, int count, Type fieldType)
+        public BaseField AddField(Direction location, int count, Type fieldType)
         {
-            Field newField = this;
+            BaseField newField = this;
             for (int i = 0; i < count; i++)
             {      
-                Field tempNewField = Activator.CreateInstance(fieldType) as Field;
+                BaseField tempNewField = Activator.CreateInstance(fieldType) as BaseField;
                 newField.AddField(location, tempNewField);
 
                 newField = tempNewField;
@@ -62,12 +63,12 @@ namespace Baricade.Core.Fields
             return this;
         }
 
-        public Field GetField(Direction location)
+        public BaseField GetField(Direction location)
         {
             return _fieldDictionary[location];
         }
 
-        public Field GetField(Direction location, int count)
+        public BaseField GetField(Direction location, int count)
         {
             var current = this;
             for (int i = 0; i < count; i++)
@@ -83,6 +84,6 @@ namespace Baricade.Core.Fields
             return GetField(location) != null;
         }
 
-        public abstract bool AcceptMovable(Movable movable);
+        public abstract bool AcceptMove(Movable movable);
     }
 }

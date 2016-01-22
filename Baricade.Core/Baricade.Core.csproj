@@ -49,7 +49,7 @@
     <Compile Include="Game.cs" />
     <Compile Include="Util\FieldLocationExtension.cs" />
     <Compile Include="Fields\Direction.cs" />
-    <Compile Include="Fields\Field.cs" />
+    <Compile Include="Fields\BaseField.cs" />
     <Compile Include="Fields\FinishField.cs" />
     <Compile Include="Fields\ForestField.cs" />
     <Compile Include="Fields\RestingField.cs" />

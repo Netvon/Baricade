@@ -6,48 +6,46 @@ namespace Baricade.Core.Movables
 {
     public abstract class Movable
     {
-        List<Field> _traversedFields;
+        List<BaseField> _traversedFields;
 
         public Movable()
         {
-            _traversedFields = new List<Field>();
+            _traversedFields = new List<BaseField>();
         }
 
-        public Field StandingOn { get; internal set; }
+        public BaseField StandingOn { get; internal set; }
         public Player Owner { get; internal set; }
         public int AvailableMoves { get; internal set; }
         public bool IsHit { get; internal set; }
-        public Field FieldBeforeMove { get; internal set; }
+        public BaseField FieldBeforeMove { get; internal set; }
         public int MovesThisTurn { get; internal set; }
 
+        public bool HasMovesLeft => AvailableMoves > 1;
+        public bool IsFirstMove => MovesThisTurn == AvailableMoves;
+        public bool IsLastMove => AvailableMoves == 1;
+
         public virtual bool Move(Direction direction)
-        {
-            IsHit = false;
+        {           
+            var nextField = StandingOn.GetField(direction) as ContainerField;
 
-            var nextField = StandingOn.GetField(direction);
-
-            if (nextField == null || nextField is SpawnField)
+            if (nextField == null)
                 return false;
             if (_traversedFields.Contains(nextField))
                 return false;
 
-            var @out = nextField.AcceptMovable(this);
+            var isAccepted = nextField.AcceptMove(this);
 
-            if (@out)
+            if (isAccepted)
             {
+                nextField.Place(this);
                 AvailableMoves--;
-                _traversedFields.Add(nextField);
+                _traversedFields.Add(StandingOn);
             }              
 
             if (AvailableMoves == 0)
                 EndMove();
 
-            return @out;
-        }
-
-        public virtual void Place(Field placeOn)
-        {
-            StandingOn = placeOn;
+            return isAccepted;
         }
 
         public void StartMove(int moves)
@@ -65,7 +63,7 @@ namespace Baricade.Core.Movables
 
             AvailableMoves = MovesThisTurn;
 
-            var sf = Game.GetInstance().Board.GetSpawnPointForPlayer(Owner) as SpawnField;
+            var sf = Game.Current.Board.GetSpawnPointForPlayer(Owner) as SpawnField;
 
             sf.Children.Add(this);
             StandingOn = FieldBeforeMove;
@@ -76,12 +74,7 @@ namespace Baricade.Core.Movables
         public void EndMove()
         {
             _traversedFields.Clear();
-            _traversedFields.Add(StandingOn);
-        }
-
-        public void Hit()
-        {
-            IsHit = true;
+            //_traversedFields.Add(StandingOn);
         }
 
         public abstract bool CanHit(Player player);
