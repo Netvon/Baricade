@@ -4000,7 +4000,7 @@
           <lifeline
             Id="46e856a6-cfcb-478c-bce7-afcc1dd8aea9"
             name="User"
-            isActor="false"
+            isActor="true"
             lifelineDisplayName="User">
             <topLevelOccurrences>
               <operandOccurrenceSpecificationMoniker

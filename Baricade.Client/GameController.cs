@@ -41,6 +41,7 @@ namespace Baricade.Client
                 {
                     RefreshBoard();
 
+                    Console.ForegroundColor = ConsoleColor.Gray;
                     Console.WriteLine("Herplaats de Baricade");
 
                     var dir = gameview.GetDirection();

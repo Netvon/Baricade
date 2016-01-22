@@ -14,7 +14,7 @@ namespace Baricade.Core
         int _currentPlayer;
         int _currentPawn;
 
-        Game(params Player[] players)
+        Game(Dice dice, params Player[] players)
         {
             Players = players;
             Board = new Board(this);
@@ -22,7 +22,7 @@ namespace Baricade.Core
             foreach (var p in Players)
                 p.Game = this;
 
-            Dice = new Dice(6);
+            Dice = dice;
         }
 
         public IEnumerable<Player> Players { get; }
@@ -117,7 +117,8 @@ namespace Baricade.Core
             get
             {
                 if (_instance == null)
-                    _instance = new Game(new Player(1), new Player(2), new Player(3), new Player(4));
+                    _instance = new Game(new Dice(6),
+                        new Player(1), new Player(2), new Player(3), new Player(4));
 
                 return _instance;
             }

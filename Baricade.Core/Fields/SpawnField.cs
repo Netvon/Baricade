@@ -20,6 +20,7 @@ namespace Baricade.Core.Fields
 
             Children.AddRange(player.Pawns);
         }
+
         public Player Player { get; }
 
         public override bool AcceptMove(Movable movable)

@@ -15,9 +15,6 @@ namespace Baricade.Core
 
         public Board(Game game)
         {
-            Width = 11;
-            Height = 8;
-
             _spawnPoints = new Dictionary<Player, CollectionField>();
 
             CreateBoard(game);
@@ -26,8 +23,6 @@ namespace Baricade.Core
         public CollectionField Forest => _forestField;
         public BaseField Origin { get; private set; }
         public BaseField Finish { get; private set; }
-        public int Width { get; }
-        public int Height { get; }
 
         void CreateBoard(Game game)
         {

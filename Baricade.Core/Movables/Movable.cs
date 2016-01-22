@@ -57,24 +57,34 @@ namespace Baricade.Core.Movables
 
         public void ResetMove()
         {
-            var cf = StandingOn as ContainerField;
-            if (cf != null)
-                cf.ClearPrevious(this);
-
             AvailableMoves = MovesThisTurn;
-
-            var sf = Game.Current.Board.GetSpawnPointForPlayer(Owner) as SpawnField;
-
-            sf.Children.Add(this);
-            StandingOn = FieldBeforeMove;
-
             _traversedFields.Clear();
+
+            if(StandingOn is ContainerField)
+            {
+                var containerField = (ContainerField)StandingOn;
+                containerField.TempChild = null;
+            }
+
+            if(FieldBeforeMove is ContainerField)
+            {
+                var containerField = (ContainerField)FieldBeforeMove;
+                containerField.Child = this;
+            }
+
+            if(FieldBeforeMove is CollectionField)
+            {
+                var collectionField = (CollectionField)FieldBeforeMove;
+                collectionField.Children.Add(this);
+
+                StandingOn = FieldBeforeMove;
+            }
+            
         }
 
         public void EndMove()
         {
             _traversedFields.Clear();
-            //_traversedFields.Add(StandingOn);
         }
 
         public abstract bool CanHit(Player player);

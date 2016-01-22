@@ -227,7 +227,7 @@ namespace Baricade.Client.View
                     {
                         pawn = item.Child as Pawn;
                     }
-                    Console.ForegroundColor = GetColor(pawn.OwnedBy.Number);
+                    Console.ForegroundColor = GetColor(pawn.Owner.Number);
                     
                     return pawn.Number + "";
                 }

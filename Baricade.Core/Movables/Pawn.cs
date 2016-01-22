@@ -17,11 +17,9 @@ namespace Baricade.Core.Movables
 
         public int Number { get; }
 
-        public Player OwnedBy => Owner;
-
         public override bool CanHit(Player player)
         {
-            if (player == OwnedBy)
+            if (player == Owner && IsLastMove)
                 return false;
 
             return true;

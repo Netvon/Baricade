@@ -43,7 +43,7 @@ namespace Baricade.Core.Fields
 
         public override bool AcceptMove(Movable movable)
         {
-            if(movable is Movables.Pawn)
+            if(movable is Pawn)
             {
                 if(Child is Movables.Baricade)
                 {
@@ -56,12 +56,14 @@ namespace Baricade.Core.Fields
                 {
                     if(!IsEmpty)
                     {
-                        var pawn = movable as Pawn;
-                        var child = Child as Pawn;
-                        if (pawn.Owner == child.Owner && movable.IsLastMove)
-                        {
-                            return false;
-                        }
+                        return movable.CanHit(Child.Owner);
+
+                        //var pawn = movable as Pawn;
+                        //var child = Child as Pawn;
+                        //if (pawn.Owner == child.Owner && movable.IsLastMove)
+                        //{
+                        //    return false;
+                        //}
                     }                    
                 }
             }

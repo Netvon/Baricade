@@ -30,6 +30,6 @@ namespace Baricade.Core
 
         public int Number { get; }
         public List<Pawn> Pawns { get; }
-        public Game Game { get; set; }
+        public Game Game { get; internal set; }
     }
 }
