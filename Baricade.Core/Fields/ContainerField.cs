@@ -142,7 +142,7 @@ namespace Baricade.Core.Fields
 
         public virtual CollectionField SendToAfterHit(Pawn pawn)
         {
-            return null;
+            return Board.GetSpawnPointForPlayer(pawn.Owner);
         }
     }
 }

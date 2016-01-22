@@ -16,10 +16,5 @@ namespace Baricade.Core.Fields
 
             return base.AcceptMove(movable);
         }
-
-        public override CollectionField SendToAfterHit(Pawn pawn)
-        {
-            return Board.GetSpawnPointForPlayer(pawn.Owner);
-        }
     }
 }
