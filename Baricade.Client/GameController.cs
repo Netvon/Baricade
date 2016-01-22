@@ -18,7 +18,7 @@ namespace Baricade.Client
 
         public GameController()
         {
-            game = Game.GetInstance();
+            game = Game.Current;
 
             boardview = new BoardView();
 
@@ -92,8 +92,6 @@ namespace Baricade.Client
                         gameview.WrongMove();
                     }
                     
-                    
-                    game.CurrentPawn.EndMove();
                 }
                 
                 RefreshBoard();

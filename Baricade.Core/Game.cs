@@ -29,7 +29,7 @@ namespace Baricade.Core
         public Board Board { get; }
         public Dice Dice { get; }
 
-        public Field BaricadeCursor { get; internal set; }
+        public BaseField BaricadeCursor { get; internal set; }
         public Movable MovingBaricade { get; internal set; }
 
         public bool IsWon { get; internal set; }
@@ -80,7 +80,7 @@ namespace Baricade.Core
             Dice.Roll();
         }
 
-        public void SetBaricadeCursor(Field field)
+        public void SetBaricadeCursor(BaseField field)
         {
             BaricadeCursor = field;
         }
@@ -98,7 +98,7 @@ namespace Baricade.Core
 
         public bool TryPlaceBaricade()
         {
-            var canPlace = BaricadeCursor.AcceptMovable(MovingBaricade);
+            var canPlace = BaricadeCursor.AcceptMove(MovingBaricade);
 
             if(canPlace)
             {
@@ -112,12 +112,15 @@ namespace Baricade.Core
             return canPlace;
         }
 
-        public static Game GetInstance()
+        public static Game Current
         {
-            if (_instance == null)
-                _instance = new Game(new Player(1), new Player(2), new Player(3), new Player(4));
+            get
+            {
+                if (_instance == null)
+                    _instance = new Game(new Player(1), new Player(2), new Player(3), new Player(4));
 
-            return _instance;
+                return _instance;
+            }
         }
     }
 }

@@ -26,15 +26,5 @@ namespace Baricade.Core.Movables
 
             return true;
         }
-
-        public override void Place(Field placeOn)
-        {
-            if(placeOn.GetType() == typeof(FinishField))
-            {
-                Game.GetInstance().IsWon = true;
-            }
-
-            base.Place(placeOn);
-        }
     }
 }

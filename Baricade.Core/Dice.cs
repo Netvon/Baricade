@@ -22,7 +22,7 @@ namespace Baricade.Core
             //Random r = new Random();
             //LastValue = r.Next(1, Eyes + 1);
 #else
-            LastValue = 12;
+            LastValue = 3;
 #endif
 
             return LastValue;

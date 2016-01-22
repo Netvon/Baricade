@@ -9,15 +9,14 @@ namespace Baricade.Core.Fields
 {
     public class RestingField : ContainerField
     {
-        public override bool AcceptMovable(Movable movable)
+        public override bool AcceptMove(Movable movable)
         {
-            if (movable.GetType() == typeof(Movables.Baricade))
+            if(movable.IsLastMove && !IsEmpty)
+            {
                 return false;
+            }
 
-            if (!IsEmpty && Child.Owner != movable.Owner)
-                return false;
-
-            return base.AcceptMovable(movable);
+            return base.AcceptMove(movable);
         }
     }
 }

@@ -9,12 +9,17 @@ namespace Baricade.Core.Fields
 {
     class BottomField : ContainerField
     {
-        public override bool AcceptMovable(Movable movable)
+        public override bool AcceptMove(Movable movable)
         {
             if (movable.GetType() == typeof(Movables.Baricade))
                 return false;
 
-            return base.AcceptMovable(movable);
+            return base.AcceptMove(movable);
+        }
+
+        public override CollectionField SendToAfterHit(Pawn pawn)
+        {
+            return Board.GetSpawnPointForPlayer(pawn.Owner);
         }
     }
 }

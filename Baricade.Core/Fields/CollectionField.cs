@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Baricade.Core.Fields
 {
-    public abstract class CollectionField : Field
+    public abstract class CollectionField : BaseField
     {
         public CollectionField()
         {
@@ -18,10 +18,10 @@ namespace Baricade.Core.Fields
 
         public override bool IsEmpty => Children.Count == 0;
 
-        public override bool AcceptMovable(Movable movable)
+        public override bool AcceptMove(Movable movable)
         {
-            Children.Add(movable);
-            return true;
+            return false;
         }
+        
     }
 }

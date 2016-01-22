@@ -4,7 +4,7 @@ namespace Baricade.Client.Presentation
 {
     class FieldToString
     {
-        public static string Convert(Field field)
+        public static string Convert(BaseField field)
         {
             var cf = field as ContainerField;
             if(cf != null)
