@@ -33,7 +33,7 @@ namespace Baricade.Client.View
         {
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.WriteLine("Je hebt " + number + " zetten over");
-            Console.WriteLine("Waar wil je heen?");
+            Console.WriteLine("Waar wil je heen? <↑> <↓> <→> <←>");
         }
 
         public string GetDirection()

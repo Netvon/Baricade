@@ -1,4 +1,5 @@
-﻿using Baricade.Client.View;
+﻿using Baricade.Client.Presentation;
+using Baricade.Client.View;
 using Baricade.Core;
 using Baricade.Core.Fields;
 using System;
@@ -39,22 +40,24 @@ namespace Baricade.Client
             {
                 while(game.IsBaricadeMoveModeActive)
                 {
-                    RefreshBoard();
+                    //RefreshBoard();
 
                     Console.ForegroundColor = ConsoleColor.Gray;
                     Console.WriteLine("Herplaats de Baricade");
 
-                    var dir = gameview.GetDirection();
+                    InputController inputController = new InputController();
 
-                    var direction = Enum.Parse(typeof(Direction), dir, true);
+                    var direction = inputController.GetDirection();
 
-                    if(game.TryMoveBaricadeCursor((Direction)direction))
+                    if(direction.Key.Key == ConsoleKey.Enter)
                     {
-                        Console.WriteLine("Wil je de baricade plaatsen? (ja/nee)");
-                        var place = Console.ReadLine();
-                        if (place.ToLower() == "ja")
-                            game.TryPlaceBaricade();
+                        game.TryPlaceBaricade();
                     }
+                    else 
+                    {
+                        game.TryMoveBaricadeCursor(direction.Result);
+                    }
+                    RefreshBoard();
                 }
 
                 int pawn = gameview.ShowTurn(game.CurrentPlayer.Number);
@@ -68,11 +71,23 @@ namespace Baricade.Client
                 while (i < number)
                 {
                     
-                    gameview.Move(number - i); 
+                    gameview.Move(number - i);
 
-                    string directionString = gameview.GetDirection();
+                    //string directionString = gameview.GetDirection();
 
-                    if(directionString == "reset")
+                    //if(directionString == "reset")
+                    //{
+                    //    i = 0;
+                    //    game.CurrentPawn.ResetMove();
+                    //    RefreshBoard();
+                    //    break;
+                    //}
+
+                    InputController inputController = new InputController();
+
+                    var direction = inputController.GetDirection();//Enum.Parse(typeof(Direction), directionString, true);
+
+                    if (direction.Key.Key == ConsoleKey.R)
                     {
                         i = 0;
                         game.CurrentPawn.ResetMove();
@@ -80,9 +95,14 @@ namespace Baricade.Client
                         break;
                     }
 
-                    var direction = Enum.Parse(typeof(Direction), directionString, true);
+                    if (direction.Result == Direction.None)
+                    {
+                        RefreshBoard();
+                        gameview.WrongMove();
+                        continue;
+                    }
 
-                    if (game.TryMove((Direction)direction))
+                    if (game.TryMove(direction.Result))
                     {
                         i++;
                         RefreshBoard();

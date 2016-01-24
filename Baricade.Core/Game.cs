@@ -85,6 +85,11 @@ namespace Baricade.Core
             BaricadeCursor = field;
         }
 
+        public void SetWin()
+        {
+            IsWon = true;
+        }
+
         public bool TryMoveBaricadeCursor(Direction direction)
         {
             var target = BaricadeCursor.GetField(direction);
@@ -102,6 +107,9 @@ namespace Baricade.Core
 
             if(canPlace)
             {
+                var newBaricadeField = BaricadeCursor as ContainerField;
+                newBaricadeField.Child = MovingBaricade;
+
                 MovingBaricade = null;
                 IsBaricadeMoveModeActive = false;
                 BaricadeCursor = null;

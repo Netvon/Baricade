@@ -9,6 +9,7 @@ namespace Baricade.Core.Fields
 {
     public enum Direction
     {
+        None,
         [Opposite(Down)]
         Up,
         [Opposite(Up)]

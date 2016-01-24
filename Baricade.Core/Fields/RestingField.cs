@@ -16,6 +16,11 @@ namespace Baricade.Core.Fields
                 return false;
             }
 
+            if(movable is Movables.Baricade)
+            {
+                return false;
+            }
+
             return base.AcceptMove(movable);
         }
     }

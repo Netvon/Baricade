@@ -16,5 +16,12 @@ namespace Baricade.Core.Fields
 
             return base.AcceptMove(movable);
         }
+
+        public override void Place(Movable movable)
+        {
+            base.Place(movable);
+
+            Game.Current.SetWin();
+        }
     }
 }

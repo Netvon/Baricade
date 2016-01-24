@@ -43,6 +43,7 @@ namespace Baricade.Core.Fields
 
         public override bool AcceptMove(Movable movable)
         {
+
             if(movable is Pawn)
             {
                 if(Child is Movables.Baricade)
@@ -50,7 +51,7 @@ namespace Baricade.Core.Fields
                     if(movable.HasMovesLeft)
                     {
                         return false;
-                    }                   
+                    }                 
                 }
                 else 
                 {
@@ -67,10 +68,19 @@ namespace Baricade.Core.Fields
                     }                    
                 }
             }
+
+            if(movable is Movables.Baricade)
+            {
+                if (Child is Movables.Baricade)
+                {
+                    return false;
+                }
+            }
+
             return true;
         }
 
-        public void Place(Movable movable)
+        public virtual void Place(Movable movable)
         {
             if(movable.HasMovesLeft)
             {
@@ -82,10 +92,18 @@ namespace Baricade.Core.Fields
             {
                 if(!IsEmpty)
                 {
-                    //geslagen Child gaat naar juiste collectionfield'
-                    var sendToAfterHit = SendToAfterHit(Child as Pawn);
-                    sendToAfterHit.Children.Add(Child);
-                    Child.StandingOn = sendToAfterHit;
+                    if (Child is Pawn)
+                    {
+                        //geslagen Child gaat naar juiste collectionfield'
+                        var sendToAfterHit = SendToAfterHit(Child as Pawn);
+                        sendToAfterHit.Children.Add(Child);
+                        Child.StandingOn = sendToAfterHit;
+                    }
+
+                    if(Child is Movables.Baricade)
+                    {
+                        Game.Current.SetBaricadeMoveMode(Child);
+                    }
                     //baricademode moet worden aangezet als baricade wordt geslagen
                 }
                 RemovePreviousMovable(movable);
@@ -133,13 +151,6 @@ namespace Baricade.Core.Fields
             var collf = movable.StandingOn as CollectionField;
             if (collf != null)
                 collf.Children.Remove(movable);
-        }
-
-        void ClearPreviousTempChild(Movable movable)
-        {
-            var cf = movable.StandingOn as ContainerField;
-            if (cf != null && cf.TempChild == movable)
-                cf.TempChild = null;
         }
 
         public virtual CollectionField SendToAfterHit(Pawn pawn)

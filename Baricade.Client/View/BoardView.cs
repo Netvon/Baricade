@@ -14,7 +14,6 @@ namespace Baricade.Client.View
     {
         public void Show(Board board)
         {
-            
             Console.SetCursorPosition(5, 0);
             WriteTab();
             Console.WriteLine(Show(board.Finish));
@@ -22,10 +21,10 @@ namespace Baricade.Client.View
 
             var field = board.Finish.GetField(Direction.Down);
 
-            for(int i = 0; i < 4; i++)
-            {
-                field = field.GetField(Direction.Left);
-            }
+            //for(int i = 0; i < 4; i++)
+            //{
+                field = field.GetField(Direction.Left, 4);
+            //}
 
             Console.SetCursorPosition(1, 1);
             WriteTab();
@@ -42,10 +41,10 @@ namespace Baricade.Client.View
             Console.Write("|       |");
 
             field = field.GetField(Direction.Down);
-            for(int i = 0; i < 8; i++)
-            {
-                field = field.GetField(Direction.Left);
-            }
+            //for(int i = 0; i < 8; i++)
+            //{
+                field = field.GetField(Direction.Left, 8);
+            //}
 
             Console.SetCursorPosition(1, 3);
             WriteTab();
@@ -61,16 +60,16 @@ namespace Baricade.Client.View
             Console.ForegroundColor = ConsoleColor.Gray;
             Console.Write("|");
             
-            for (int i = 0; i < 4; i++)
-            {
-                field = field.GetField(Direction.Left);
-            }
+            //for (int i = 0; i < 4; i++)
+            //{
+                field = field.GetField(Direction.Left, 4);
+            //}
             field = field.GetField(Direction.Down);
 
-            for(int i = 0; i < 3; i++)
-            {
-                field = field.GetField(Direction.Left);
-            }
+            //for(int i = 0; i < 3; i++)
+            //{
+                field = field.GetField(Direction.Left, 3);
+            //}
 
             Console.SetCursorPosition(2, 5);
             WriteTab();
@@ -91,10 +90,10 @@ namespace Baricade.Client.View
             WriteTab();
             field = field.GetField(Direction.Down);
 
-            for (int i = 0; i < 6; i++)
-            {
-                field = field.GetField(Direction.Left);
-            }
+            //for (int i = 0; i < 6; i++)
+            //{
+                field = field.GetField(Direction.Left, 6);
+            //}
                      
             Console.Write(Show(field));
             for (int i = 0; i < 6; i++)
@@ -108,16 +107,16 @@ namespace Baricade.Client.View
             Console.ForegroundColor = ConsoleColor.Gray;
             Console.WriteLine("|");
 
-            for (int i = 0; i < 3; i++)
-            {
-                field = field.GetField(Direction.Left);
-            }
+            //for (int i = 0; i < 3; i++)
+            //{
+                field = field.GetField(Direction.Left, 3);
+            //}
             field = field.GetField(Direction.Down);
 
-            for (int i = 0; i< 3; i++)
-            {
-                field = field.GetField(Direction.Left);
-            }
+            //for (int i = 0; i< 3; i++)
+            //{
+                field = field.GetField(Direction.Left, 3);
+            //}
 
             Console.SetCursorPosition(3, 9);
             WriteTab();
@@ -129,10 +128,10 @@ namespace Baricade.Client.View
             }
 
             BaseField forest = field.GetField(Direction.Left);
-            for (int i = 0; i < 1; i++)
-            {
+            //for (int i = 0; i < 1; i++)
+            //{
                 forest = forest.GetField(Direction.Left);
-            }
+            //}
             forest = forest.GetField(Direction.Down);
 
             Console.SetCursorPosition(3, 10);
@@ -185,32 +184,41 @@ namespace Baricade.Client.View
             Console.Write(Show(field));
 
             field = board.Origin;
-            field = field.GetField(Direction.Right);
-            field = field.GetField(Direction.Right);
-            field = field.GetField(Direction.Right);
+            field = field.GetField(Direction.Right, 3);
+            //field = field.GetField(Direction.Right);
+            //field = field.GetField(Direction.Right);
             field = field.GetField(Direction.Down);
             Console.Write(" " + Show(field));
 
             field = field.GetField(Direction.Up);
-            field = field.GetField(Direction.Right);
-            field = field.GetField(Direction.Right);
-            field = field.GetField(Direction.Right);
-            field = field.GetField(Direction.Right);
+            field = field.GetField(Direction.Right, 4);
+            //field = field.GetField(Direction.Right);
+            //field = field.GetField(Direction.Right);
+            //field = field.GetField(Direction.Right);
             field = field.GetField(Direction.Down);
             Console.Write("   " + Show(field));
 
             field = field.GetField(Direction.Up);
-            field = field.GetField(Direction.Right);   
-            field = field.GetField(Direction.Right);
+            field = field.GetField(Direction.Right, 2);   
+            //field = field.GetField(Direction.Right);
             field = field.GetField(Direction.Down);
             Console.Write(" " + Show(field));
 
             Console.WriteLine();
+
         }
 
-        private String Show(BaseField obj)
+        string Show(BaseField obj)
         {
+            Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.Gray;
+
+            if (obj == Game.Current.BaricadeCursor)
+            {
+                Console.BackgroundColor = ConsoleColor.Cyan;
+                Console.ForegroundColor = ConsoleColor.Black;
+                return "B";
+            }
 
             ContainerField item = obj as ContainerField;
             if(item != null)
@@ -243,7 +251,7 @@ namespace Baricade.Client.View
                 Console.ForegroundColor = GetColor(color);
             }
 
-
+            
                 return FieldToString.Convert(obj); 
             
             //if (obj is FinishField)
@@ -294,7 +302,7 @@ namespace Baricade.Client.View
 
         private void WriteTab()
         {
-            Console.Write("                     ");
+            //Console.Write("                     ");
         }
     }
 }

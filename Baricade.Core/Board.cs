@@ -67,8 +67,7 @@ namespace Baricade.Core
             seventh.AddField(Direction.Right, 8, typeof(CityField));
 
             var b1 = seventh.GetField(Direction.Right, 4) as CityField;
-            b1.Child = new Movables.Baricade();
-            b1.Child.StandingOn = b1;
+            AddBaricade(b1);            
 
             seventh.GetField(Direction.Right, 8)
                    .AddField(Direction.Down, sixth.GetField(Direction.Right, 8));
@@ -83,8 +82,7 @@ namespace Baricade.Core
                  .GetField(Direction.Up);
 
             var mid = middle as CityField;
-            mid.Child = new Movables.Baricade();
-            mid.Child.StandingOn = mid;
+            AddBaricade(mid);
 
             middle.AddField(Direction.Left, new RestingField());
             middle.GetField(Direction.Left)
@@ -107,12 +105,10 @@ namespace Baricade.Core
             fifth.AddField(Direction.Right, 6, typeof(CityField));
 
             var b1 = fifth.GetField(Direction.Right, 2) as CityField;
-            b1.Child = new Movables.Baricade();
-            b1.Child.StandingOn = b1;
+            AddBaricade(b1);
 
             var b2 = fifth.GetField(Direction.Right, 4) as CityField;
-            b2.Child = new Movables.Baricade();
-            b2.Child.StandingOn = b2;
+            AddBaricade(b2);
 
             fourth.GetField(Direction.Right, 6)
                   .AddField(Direction.Up, fifth.GetField(Direction.Right, 6));
@@ -136,12 +132,10 @@ namespace Baricade.Core
                   .AddField(Direction.Right, new RestingField());
 
             var cf1 = middle.GetField(Direction.Right, 2) as ContainerField;
-            cf1.Child = new Movables.Baricade();
-            cf1.Child.StandingOn = cf1;
+            AddBaricade(cf1);
 
             var cf2 = middle.GetField(Direction.Left, 2) as ContainerField;
-            cf2.Child = new Movables.Baricade();
-            cf2.Child.StandingOn = cf2;
+            AddBaricade(cf2);
 
             third.GetField(Direction.Right, 2)
                  .AddField(Direction.Up, middle);
@@ -249,6 +243,14 @@ namespace Baricade.Core
         BaseField CreateBottomRow(BottomField origin)
         {
             return origin.AddField(Direction.Right, 10, typeof(BottomField));
+        }
+
+        void AddBaricade(ContainerField b1)
+        {
+#if !NOBARICADE
+            b1.Child = new Movables.Baricade();
+            b1.Child.StandingOn = b1;
+#endif
         }
 
         internal CollectionField GetSpawnPointForPlayer(Player player)
