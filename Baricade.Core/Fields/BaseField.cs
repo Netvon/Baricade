@@ -24,18 +24,48 @@ namespace Baricade.Core.Fields
             UniqueID = Guid.NewGuid();
         }
 
+        public int Row { get; internal set; }
+        public int Column { get; internal set; }
+
+        public BaseField FieldUp => _fieldDictionary[Direction.Up];
+        public BaseField FieldDown => _fieldDictionary[Direction.Down];
+        public BaseField FieldLeft => _fieldDictionary[Direction.Left];
+        public BaseField FieldRight => _fieldDictionary[Direction.Right];
+
         public Board Board => Game.Current.Board;
         public Guid UniqueID { get; }
         public virtual bool IsEmpty => true;        
 
         public static BaseField DefaultField => new ContainerField();
 
-        public BaseField AddField(Direction location, BaseField field)
+        public BaseField AddField(Direction location, BaseField field, bool updateRowColumn = true)
         {
             _fieldDictionary[location] = field;
 
+            if (updateRowColumn)
+            {
+                field.Row = Row;
+                field.Column = Column;
+
+                switch (location)
+                {
+                    case Direction.Up:
+                        field.Row = Row + 1;
+                        break;
+                    case Direction.Down:
+                        field.Row = Row - 1;
+                        break;
+                    case Direction.Left:
+                        field.Column = Column - 1;
+                        break;
+                    case Direction.Right:
+                        field.Column = Column + 1;
+                        break;
+                }
+            }
+
             if (field.GetField(location.Opposite()) == null)
-                field.AddField(location.Opposite(), this);
+                field.AddField(location.Opposite(), this, false);
             
             return this;
         }
@@ -85,5 +115,10 @@ namespace Baricade.Core.Fields
         }
 
         public abstract bool AcceptMove(Movable movable);
+
+        public override string ToString()
+        {
+            return $"Row: {Row}, Column: {Column}, Type: {GetType().Name}";
+        }
     }
 }

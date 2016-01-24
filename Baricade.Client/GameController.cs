@@ -44,6 +44,7 @@ namespace Baricade.Client
 
                     Console.ForegroundColor = ConsoleColor.Gray;
                     Console.WriteLine("Herplaats de Baricade");
+                    Console.Write($"Pointing at {game.BaricadeCursor}");
 
                     InputController inputController = new InputController();
 

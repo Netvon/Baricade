@@ -115,7 +115,7 @@ namespace Baricade.Client.View
 
             //for (int i = 0; i< 3; i++)
             //{
-                field = field.GetField(Direction.Left, 3);
+                field = field.GetField(Direction.Left, 2);
             //}
 
             Console.SetCursorPosition(3, 9);
@@ -203,6 +203,9 @@ namespace Baricade.Client.View
             //field = field.GetField(Direction.Right);
             field = field.GetField(Direction.Down);
             Console.Write(" " + Show(field));
+
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.ForegroundColor = ConsoleColor.Gray;
 
             Console.WriteLine();
 

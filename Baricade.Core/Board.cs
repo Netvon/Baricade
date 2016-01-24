@@ -27,6 +27,8 @@ namespace Baricade.Core
         void CreateBoard(Game game)
         {
             var origin = new BottomField();
+            origin.Row = 1;
+            origin.Column = 0;
 
             // Bottom Row
             BaseField first = CreateBottomRow(origin);
@@ -118,29 +120,31 @@ namespace Baricade.Core
 
         BaseField CreateFourthRow(BaseField third)
         {
-            var middle = third.GetField(Direction.Right, 3)
+            var middleOfFourth = third.GetField(Direction.Right, 2)
                   .AddField(Direction.Up)
                   .GetField(Direction.Up);
 
-            middle.AddField(Direction.Left, 2);
-            middle.AddField(Direction.Right, 2);
+            middleOfFourth.AddField(Direction.Left, 2);
+            middleOfFourth.AddField(Direction.Right, 2);
 
-            middle.GetField(Direction.Left, 2)
+            middleOfFourth.GetField(Direction.Left, 2)
                   .AddField(Direction.Left, new RestingField());
 
-            middle.GetField(Direction.Right, 2)
+            middleOfFourth.GetField(Direction.Right, 2)
                   .AddField(Direction.Right, new RestingField());
 
-            var cf1 = middle.GetField(Direction.Right, 2) as ContainerField;
+            var cf1 = middleOfFourth.GetField(Direction.Right, 2) as ContainerField;
             AddBaricade(cf1);
 
-            var cf2 = middle.GetField(Direction.Left, 2) as ContainerField;
+            var cf2 = middleOfFourth.GetField(Direction.Left, 2) as ContainerField;
             AddBaricade(cf2);
 
-            third.GetField(Direction.Right, 2)
-                 .AddField(Direction.Up, middle);
+            //var middleOfThird = third.GetField(Direction.Right, 2);
 
-            var forth = middle.GetField(Direction.Left, 3);
+            //third.GetField(Direction.Right, 2)
+            //     .AddField(Direction.Up, middle);
+
+            var forth = middleOfFourth.GetField(Direction.Left, 3);
             return forth;
 
         }
@@ -148,8 +152,8 @@ namespace Baricade.Core
         BaseField CreateThridRow(BaseField second)
         {
             var third = second.GetField(Direction.Right, 3)
-                                          .AddField(Direction.Up)
-                                          .GetField(Direction.Up);
+                            .AddField(Direction.Up)
+                            .GetField(Direction.Up);
 
             third.AddField(Direction.Right);
 
