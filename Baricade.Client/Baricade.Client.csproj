@@ -43,9 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GameController.cs" />
-    <Compile Include="InputController.cs" />
+    <Compile Include="Controller\GameController.cs" />
+    <Compile Include="Controller\InputController.cs" />
+    <Compile Include="Presentation\Colors.cs" />
     <Compile Include="Presentation\DirectionToString.cs" />
+    <Compile Include="Presentation\FieldToColors.cs" />
     <Compile Include="Presentation\MovableToString.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

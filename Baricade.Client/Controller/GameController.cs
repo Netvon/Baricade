@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Baricade.Client
+namespace Baricade.Client.Controller
 {
     public class GameController
     {

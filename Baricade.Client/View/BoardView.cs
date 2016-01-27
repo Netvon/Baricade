@@ -218,76 +218,14 @@ namespace Baricade.Client.View
 
         void Show(BaseField obj)
         {
-            ContainerField item = obj as ContainerField;
+            Colors colors = FieldToColors.Convert(obj);
+            Console.BackgroundColor = colors.Background;
+            Console.ForegroundColor = colors.Foreground;
 
-            if (obj == Game.Current.BaricadeCursor)
-            {
-                Console.BackgroundColor = ConsoleColor.Cyan;
-                Console.ForegroundColor = ConsoleColor.White;
-                Console.Write(MovableToString.Convert(item.TempChild));
-            }
-            
-            else if(item != null)
-            {
-                
-                if(item.Child is Pawn || item.TempChild is Pawn)
-                {
-                    Pawn pawn;
-                    if (item.TempChild != null)
-                    {
-                        pawn = item.TempChild as Pawn;
-                    }
-                    else
-                    {
-                        pawn = item.Child as Pawn;
-                    }
-                    Console.ForegroundColor = GetColor(pawn.Owner.Number);
-                    
-                    Console.Write(pawn.Number);
-                }
-                else if (item.Child is Baricade.Core.Movables.Baricade)
-                {
-                    Console.ForegroundColor = ConsoleColor.White;
-                    Console.Write(MovableToString.Convert(item.Child));
-                }
-                else
-                {
-                    Console.Write(FieldToString.Convert(obj));
-                }
-            }
-            else if (obj is SpawnField)
-            {
-                var field = (SpawnField)obj;
-                int color = field.Player.Number;
-                Console.ForegroundColor = GetColor(color);
-                Console.Write(field.Children.Count);
-            }
-            
-            else
-            {
-                Console.Write(FieldToString.Convert(obj));
-            }                
+            Console.Write(FieldToString.Convert(obj));
 
-            Console.BackgroundColor = ConsoleColor.Black;
-            Console.ForegroundColor = ConsoleColor.Gray;
-        }
-
-        private ConsoleColor GetColor(int number)
-        {
-            switch (number)
-            {
-                case (1):
-                    return ConsoleColor.Red;
-                case (2):
-                    return ConsoleColor.Green;
-                case (3):
-                    return ConsoleColor.Yellow;
-                case (4):
-                    return ConsoleColor.Blue;
-
-                default:
-                    return ConsoleColor.Magenta;
-            }
+            Console.BackgroundColor = Colors.DefaultBackground;
+            Console.ForegroundColor = Colors.DefaultForeground;
         }
 
         private void WriteTab()

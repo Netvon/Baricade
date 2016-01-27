@@ -6,23 +6,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Baricade.Client
+namespace Baricade.Client.Controller
 {
     class InputController
     {
-        public InputResult<int?> GetInteger(int min, int max)
-        {
-            var input = Console.ReadLine();
-
-            int number;
-            bool isValidNumber = int.TryParse(input, out number);
-
-            if (isValidNumber && number >= min && number <= max)
-                return new InputResult<int?>(number, input);
-
-            return new InputResult<int?>(null, input);
-        }
-
         public KeyInputResult<Direction> GetDirection()
         {
             var key = Console.ReadKey();
@@ -62,33 +49,19 @@ namespace Baricade.Client
         }
     }
 
-    class InputResult<T>
-    {
-        public InputResult(T result, string input)
-        {
-            Result = result;
-            Input = input;
-        }
-
-        public T Result { get; }
-        public string Input { get; }
-        public bool IsResultNull => Result == null;
-    }
-
-    class KeyInputResult<T> : InputResult<T>
+    class KeyInputResult<T>
     {
         public KeyInputResult(T result, ConsoleKeyInfo key)
-            : base(result, key.ToString())
         {
             Key = key;
         }
 
         public KeyInputResult(ConsoleKeyInfo key)
-            :base(default(T), key.ToString())
         {
             Key = key;
         }
 
+        public T Result { get; }
         public ConsoleKeyInfo Key { get; }
     }
 }
