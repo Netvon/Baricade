@@ -22,7 +22,7 @@ namespace Baricade.Core
 
         public CollectionField Forest => _forestField;
         public BaseField Origin { get; private set; }
-        public BaseField Finish { get; private set; }
+        public ContainerField Finish { get; private set; }
 
         void CreateBoard(Game game)
         {
@@ -55,7 +55,7 @@ namespace Baricade.Core
             BaseField seventh = CreateSeventhRow(sixth);
 
             Finish = seventh.GetField(Direction.Right, 4)
-                   .AddField(Direction.Up, new FinishField()).GetField(Direction.Up);
+                   .AddField(Direction.Up, new FinishField()).GetField(Direction.Up) as ContainerField;
 
             Origin = origin;
         }

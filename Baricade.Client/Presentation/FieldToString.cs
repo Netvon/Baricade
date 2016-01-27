@@ -6,13 +6,6 @@ namespace Baricade.Client.Presentation
     {
         public static string Convert(BaseField field)
         {
-            var cf = field as ContainerField;
-            if(cf != null)
-            {
-                if (cf.Child is Core.Movables.Baricade)
-                    return "B";
-            }
-
             if (field is FinishField)
                 return "*";
 

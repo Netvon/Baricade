@@ -94,7 +94,7 @@ namespace Baricade.Core
         {
             var target = BaricadeCursor.GetField(direction);
 
-            if (target == null)
+            if (target == null || target is CollectionField)
                 return false;
 
             BaricadeCursor = target;

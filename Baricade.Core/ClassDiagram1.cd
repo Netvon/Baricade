@@ -3,7 +3,7 @@
   <Class Name="Baricade.Core.Board" Collapsed="true">
     <Position X="10" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>CAABIAAAJAAAIAACAAAAAEAAAAAAEAAAAgAQgCgQAAk=</HashCode>
+      <HashCode>CAIBIAAAIAAAIAACAAAAAAAAAAAAEAAAAgAQgCgQAAk=</HashCode>
       <FileName>Board.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -13,7 +13,7 @@
   <Class Name="Baricade.Core.Fields.ContainerField">
     <Position X="4.25" Y="4.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>CABAAEAAAABIAIgIAAAAAAAAAAAAAAAUAEAAAAAAAAA=</HashCode>
+      <HashCode>CABAAEAAAAAIAIgIAAAAAAAAAAAAAAAUAEAAAAAAAAA=</HashCode>
       <FileName>Fields\ContainerField.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -21,15 +21,15 @@
     <Position X="6.5" Y="0.5" Width="1.5" />
     <AssociationLine Name="_fieldDictionary" Type="Baricade.Core.Fields.BaseField" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="6.5" Y="1.905" />
-        <Point X="6.26" Y="1.905" />
+        <Point X="6.5" Y="2.557" />
+        <Point X="6.26" Y="2.557" />
         <Point X="6.26" Y="0.26" />
         <Point X="7.478" Y="0.26" />
         <Point X="7.478" Y="0.5" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AABAAEAUgAAAAAAAAAQABAAAAEAAAAAAAAAAACAAAAA=</HashCode>
+      <HashCode>AABAAGAUgQCAAAAEAARAJAAAAEAAAgAAAAAAACAAAAA=</HashCode>
       <FileName>Fields\BaseField.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
@@ -81,7 +81,7 @@
   <Class Name="Baricade.Core.Fields.BottomField" Collapsed="true">
     <Position X="3.25" Y="7.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>CAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Fields\BottomField.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -102,14 +102,14 @@
   <Class Name="Baricade.Core.Fields.FinishField" Collapsed="true">
     <Position X="1" Y="7.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
       <FileName>Fields\FinishField.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Baricade.Core.Fields.ForestField" Collapsed="true">
     <Position X="10" Y="5.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Fields\ForestField.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -137,14 +137,14 @@
   <Class Name="Baricade.Core.Movables.Pawn" Collapsed="true">
     <Position X="2.75" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAIAAEAAAAAAAAAAAAAAAEAAABAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAIAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Movables\Pawn.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Enum Name="Baricade.Core.Fields.Direction">
     <Position X="14.75" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAACACAAAAAAAI=</HashCode>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAACACAAAEAAAI=</HashCode>
       <FileName>Fields\Direction.cs</FileName>
     </TypeIdentifier>
   </Enum>

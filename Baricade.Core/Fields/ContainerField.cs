@@ -71,7 +71,7 @@ namespace Baricade.Core.Fields
 
             if(movable is Movables.Baricade)
             {
-                if (Child is Movables.Baricade)
+                if (Child != null)
                 {
                     return false;
                 }

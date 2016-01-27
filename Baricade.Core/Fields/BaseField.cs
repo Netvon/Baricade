@@ -118,7 +118,7 @@ namespace Baricade.Core.Fields
 
         public override string ToString()
         {
-            return $"Row: {Row}, Column: {Column}, Type: {GetType().Name}";
+            return $"Rij: {Row}, Kolom: {Column}, Type: {GetType().Name}";
         }
     }
 }

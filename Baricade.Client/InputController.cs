@@ -45,6 +45,21 @@ namespace Baricade.Client
 
             return new KeyInputResult<Direction>(key);
         }
+
+        public int GetPawnNumber()
+        {
+            int input = 0;
+            bool isCorrect = false;
+            while (!isCorrect)
+            {
+                int.TryParse(Console.ReadLine(), out input);
+                if (input > 0 && input <= 4)
+                {
+                    isCorrect = true;
+                }
+            }
+            return input;
+        }
     }
 
     class InputResult<T>
