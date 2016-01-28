@@ -1,4 +1,6 @@
-﻿using Baricade.Core.Fields;
+﻿using Baricade.Core;
+using Baricade.Core.Fields;
+using Baricade.Core.Movables;
 
 namespace Baricade.Client.Presentation
 {
@@ -6,6 +8,24 @@ namespace Baricade.Client.Presentation
     {
         public static string Convert(BaseField field)
         {
+            var container = field as ContainerField;
+            if(container != null)
+            {
+                Movable child = container.TempChild;
+
+                if (Game.Current.IsBaricadeMoveModeActive)
+                {
+                    if (Game.Current.BaricadeCursor == field)
+                        return MovableToString.Convert(child);
+                }
+
+                if (child == null)
+                    child = container.Child;
+
+                if (child != null)
+                    return MovableToString.Convert(child);
+            }
+
             if (field is FinishField)
                 return "*";
 

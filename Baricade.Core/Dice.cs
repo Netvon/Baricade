@@ -14,7 +14,7 @@ namespace Baricade.Core
         public Dice(int eyes)
         {
             Eyes = eyes;
-            list = new List<int>() { 2, 2, 10, 14, 16, 25, 26, 10 };
+            list = new List<int>() { 10, 12, 12, 14, 16, 25, 26, 10 };
             i = 0;
         }
 

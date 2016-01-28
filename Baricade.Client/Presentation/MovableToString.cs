@@ -15,7 +15,7 @@ namespace Baricade.Client.Presentation
             if (cf != null)
                 return $"{cf.Number}";
 
-            return "░";
+            return "B";
         }
     }
 }
