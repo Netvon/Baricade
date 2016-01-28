@@ -74,9 +74,11 @@ namespace Baricade.Core.Movables
 
             if(FieldBeforeMove is CollectionField)
             {
-                var collectionField = (CollectionField)FieldBeforeMove;
-                collectionField.Children.Add(this);
-
+                if(StandingOn != FieldBeforeMove)
+                {
+                    var collectionField = (CollectionField)FieldBeforeMove;
+                    collectionField.Children.Add(this);
+                }
                 StandingOn = FieldBeforeMove;
             }
             
