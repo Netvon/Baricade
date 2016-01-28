@@ -13,7 +13,6 @@ namespace Baricade.Client.View
         public void ShowTurn(int player, int number)
         {
             Console.ForegroundColor = ConsoleColor.DarkGray;
-            Console.SetCursorPosition(0, 18);
             Console.WriteLine("Speler " + player + " is aan de beurt");
             Console.WriteLine("Je hebt " + number + " gegooid");
             Console.WriteLine("Kies een pion om mee te spelen");                      
@@ -75,7 +74,7 @@ namespace Baricade.Client.View
 
         public void setCurser()
         {
-            Console.SetCursorPosition(0, 18);
+            Console.SetCursorPosition(0, 19);
         }
 
         public void ShowBaricade(BaseField baricadeCursor)

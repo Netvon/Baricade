@@ -213,7 +213,32 @@ namespace Baricade.Client.View
             Console.ForegroundColor = ConsoleColor.Gray;
 
             Console.WriteLine();
+            ShowForest(board);
+        }
 
+        void ShowForest(Board board)
+        {
+            Console.Write("--------------");
+            foreach(var child in board.Forest.Children)
+            {
+                Console.Write("---");
+            }
+            Console.Write("\n");
+            Console.Write("Forest bevat: ");
+            foreach(var child in board.Forest.Children)
+            {
+                var pawn = child as Pawn;
+                Console.ForegroundColor = GetColor(pawn.Owner.Number);
+                Console.Write(pawn.Number + ", ");
+            }
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.Write("| \n");
+            Console.Write("--------------");
+            foreach (var child in board.Forest.Children)
+            {
+                Console.Write("---");
+            }
+            Console.Write("\n");
         }
 
         void Show(BaseField obj)
